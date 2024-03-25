@@ -20,16 +20,21 @@ if(isset($_GET['search1'])) {
         ':recherche' => '%' . $recherche . '%'
         
     ]);
+   
+    if($requete->rowCount() == 0) {
+        echo "Désolé, aucun produit ne correspond à votre recherche.";
+    } 
 
    
     // Récupérer les résultats de la requête
 
     $produits = $requete->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
  <main>
 
 
-     <h2>  les résultats de votre recherche : <?php  echo $recherche ?></h2>
     <div class="row my-5">
          <!-- affichage des résultats dans des card bootstraap -->
         <?php
