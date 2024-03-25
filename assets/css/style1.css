@@ -1,0 +1,407 @@
+/* importer  le lien de la typo de google fonts  */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+
+
+/*  style général */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+#nomsite {
+  font-family: 'Aclonica', sans-serif;
+  color: #ffde59;
+  font-style: italic;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+
+
+/*  style général du container  */
+
+/* style de navbar */
+.navbar {
+  display: flex;
+  justify-content:center;
+ 
+
+}
+
+.navbar a {
+  text-decoration: none;
+  font-style: italic;
+  color: black;
+  text-transform: capitalize;
+  font-size: 10px;
+  font-weight: bold;
+  
+
+  
+ 
+}
+.navbar a:hover   {
+  
+  color: #0cc0df;
+  
+ 
+}
+/*  formulaire de recherche  */
+.form-control {
+        font-size: 13px; 
+}
+
+/*  positionnement de la barre */
+
+/*  pour le js */
+/* nav bar mobile */
+
+.navbar-mobile-listes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+ 
+
+}
+
+.navbar-mobile-listes a {
+  text-decoration: none;
+  color: black;
+  font-size: 8px;
+  text-transform: capitalize;
+
+}
+
+
+
+#bouton {
+  position: fixed;
+  top: -20px;
+  left: 100px;
+  font-weight: bold;
+
+
+}
+
+#pmenu {
+  position: fixed;
+  top: 0;
+  left: 45px;
+  font-weight: bold;
+}
+
+.modale {
+
+  position: fixed;
+  left: 0px;
+  top: -100vh;
+  background-color: #f0f0f2;
+  width:50%;
+  z-index: 1999;
+  transition: top 0.9s;
+
+}
+
+.modale-change {
+  top: 100px;
+}
+
+
+/*  styles des icons header  */
+
+header i {
+
+  padding: 20px;
+  font-size: 15px;
+ 
+}
+
+header img {
+  height: 80px;
+  width: 80px;
+
+}
+.pheader{
+  font-size: 8px;
+  
+}
+
+
+/*  fin style header  */
+/*  style main */
+span{
+  background-color: #ffbd59;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  
+ 
+}
+
+/* style div video  */
+
+.divideo {
+  position: relative;
+
+  width: 100%;
+  background-color: #000;
+
+}
+
+.titrevideo {
+  color: #f0f0f2;
+  position: absolute;
+  bottom: 50%;
+  left: 10%;
+  font-family: 'Aclonica', sans-serif;
+  font-style: italic;
+
+}
+
+#video {
+  display: block ;
+  width:400px;
+  margin: 0 auto;
+  height: 25rem;
+}
+
+.decouvrir {
+  color: #f0f0f2;
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  border: solid 1px white;
+  background-color: #0cc0df;
+  border-radius: 30px;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+/*  fin style video */
+
+/* style h2 */
+h2{
+  font-style: italic;
+  font-size: 20px;
+}
+/* style circle */
+.box {
+  position: relative;
+  color: #ffbd59;
+  cursor: pointer;/*  curseur change en main quand on survol le cyrcle */
+  transition: transforme 0.4s cubic-bezier(0.23, 1.83, 0.42, 1.19);
+}
+
+.box p {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f1f1f1;
+  border-radius: 50%;
+  animation: 1s linear infinite alternate boxMagic,
+    4s linear infinite spinning;
+  padding-top: 60px;
+  /*  pour deformer le circcle il depasse 320 et box sizinz a revoir  */
+}
+
+@keyframes boxMagic {
+  from {
+    box-shadow:
+      0 0 0 #feac5e,
+      0 0 0 #c779d0,
+      0 0 0 #4bc0c8,
+      0 0 0 #42db75;
+  }
+
+  to {
+    box-shadow:
+      0 -10px 0 #feac5e,
+      -10px 0 0 #c779d0,
+      0 10px 0 #4bc0c8,
+      10px 0 0 #42db75;
+  }
+}
+
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*  fin style cyrcle */
+
+/*  style boutique */
+
+
+.boutique a {
+  color: #f0f0f2;
+  border: solid 1px white;
+  background-color: #0cc0df;
+  border-radius: 30px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+  font-size: 10px;
+  text-transform: capitalize;
+}
+
+/*  fin style boutique */
+
+
+#imgext{
+  width: 210px;
+  height: 175px;
+}
+
+.salon{
+  position: relative;
+}
+.liensalon{
+  position: absolute;
+  bottom: -2%;
+  
+
+}
+.cuisine{
+  position: relative;
+}
+.liencuisine{
+  position: absolute;
+  bottom: -2%;
+  
+
+}
+
+.chambre{
+  position: relative;
+}
+.lienchambre{
+  position: absolute;
+  bottom: -2%;
+  
+
+}
+.sallebain{
+  position: relative;
+}
+.liensallebain{
+  position: absolute;
+  bottom: -3%;
+  
+
+}
+
+.exterieur{
+  position: relative;
+}
+.lienexterieur{
+  position: absolute;
+  bottom: -3%;
+  
+
+}
+
+
+
+/* fin style js boutique  */
+
+/* div pup */
+#divpub{
+  position:relative
+}
+
+
+/*.imglivre{
+  position: absolute;
+  bottom: 0%;
+  left: 80%;
+}
+ 
+*/
+
+
+
+/* style footer */
+
+#containerfooter {
+  background-color: #cecece;
+
+
+}
+
+footer i {
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+footer a {
+ 
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+}
+ footer p{
+  font-size: 10px;
+  font-weight: bold;
+ }
+
+/*  page apropos */
+.pageapropos{
+  position: relative;
+}
+.textpageapropos{
+  position: absolute;
+  left:10%;
+  top:10%;
+  background-color: #f1f1f1;
+}
+h4{
+  font-size:15px;
+  font-style: italic;
+  text-transform: uppercase;
+
+}
+h3{
+  font-size:15px;
+ text-transform: uppercase;
+}
+p{
+  font-size: 15px;
+
+}
+
+/*  page profil */
+.profil{
+  font-weight: bold;
+  font-style: italic;
+  color: #fff;
+}
+
+
