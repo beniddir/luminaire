@@ -34,6 +34,7 @@ if (isset($_SESSION['utilisateurs']['id_utilisateur'])) { // Vérifie si l'utili
     $contenu .= "<div class=\"alert alert-danger\">Vous devez être connecté pour ajouter des produits au panier.</div>";
 }
 ?>
+<!-- ce site est sur github -->
 
 <main>
     <?php echo $contenu ?>
