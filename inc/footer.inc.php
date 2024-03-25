@@ -6,7 +6,7 @@
 
 </html>
 
-<footer class=" container mt-5" id="footer">
+<footer class=" container-fluid mt-5" id="footer">
     <div id="containerfooter">
         <!-- rangée1 footer -->
         <div class="row">

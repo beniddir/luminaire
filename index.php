@@ -148,7 +148,7 @@ require 'inc/header.inc.php';
 
 
             <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto imglivre">
-                <img src="assets/img/livre.jpg" class="img-fluid imagelivre" alt="image livre" width="200" height="200">
+                <img src="assets/img/livre.jpg" class=" imagelivre" img-fluid  alt="image livre" width="200" height="200">
             </div>
 
 

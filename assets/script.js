@@ -134,7 +134,7 @@ gestionClick(icone1);*/
 let image = document.querySelector('.imagelivre');
 
 image.addEventListener('click',()=>{
-   image.src="assets/img/livre1.png";
+    image.src="assets/img/livrelum1.jpg";
 })
-   
+
 

@@ -2,6 +2,11 @@
 /* 1- Appel du fichier init */
 require 'inc/init.inc.php';
 // traitement formulaire ajouter un produit 
+if(!estAdmin()){
+    header('location:produits.php');
+    exit();
+}// si la personne qui essaye d'aller sur la page n'est pas admin on la renvoie vers la page articles.php
+
 
 if (!empty($_POST)) {
     // a. protection failles SQL

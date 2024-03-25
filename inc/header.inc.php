@@ -52,13 +52,21 @@
                 <!--d-inline-block est utilisée pour afficher un élément comme un bloc en ligne, ce qui signifie qu'il occupe seulement la largeur nécessaire à son contenu et qu'il ne commence pas une nouvelle ligne après lui-même.  -->
 
                 <div class="d-inline-block"> <a href="panier.php"><i class="bi bi-bag-heart "></i></a>
-                    <p class="pheader"> Panier   <small><?php echo isset($_SESSION['panier']) ? array_sum($_SESSION['panier']) : 0; ?></small> </p>
-                    
+                    <p class="pheader"> Panier <small><?php echo isset($_SESSION['panier']) ? array_sum($_SESSION['panier']) : 0; ?></small> </p>
+
                 </div>
 
                 <div class="d-inline-block">
                     <a href="connexion.php"><i class="bi bi-person-plus-fill "></i></a>
-                    <p class="pheader">Connexion</p>
+                    <?php
+                    if (!estConnecte()) { 
+                        echo '<p class="pheader">Connexion</p>';
+
+                    } else {
+                        echo '<p class="pheader">Connecté(e)</p>';
+                    } ?>
+
+
                 </div>
 
             </div>
@@ -108,14 +116,14 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="admin.php">Voir les commandes </a>
-                   
+
 
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="gestionstock.php">Gestion Stock </a>
 
                 </li>
-                
+
 
             <?php } ?>
             </ul>
@@ -140,7 +148,7 @@
                             </ul>
                         </li>
                         <li> <a href="salon.php" class="nav-link"> éclairage Salon</a>
-                        </li> 
+                        </li>
                         <li> <a href="cuisine.php" class="nav-link"> éclairage Cuisine </a>
                         </li>
                         <li> <a href="salledebain.php" class="nav-link">éclairage Salle de bain </a>
@@ -163,7 +171,7 @@
                                 <a class="nav-link" href="admin.php">Admin</a>
 
                             </li>
-                            
+
                         <?php } ?>
                     </ul>
 
