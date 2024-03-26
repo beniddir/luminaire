@@ -28,12 +28,8 @@ require 'inc/header.inc.php';
     </div>
     <!-- fin div video -->
     <!--   <div class=" container d-flex align-items-center my-3">
-        <div class="box">
-            <div class="circle"></div>
-            <p>New</p>
-
-        </div>
-        <h2 class="mx-5"> A la Une</h2>
+        
+     
     </div>-->
 
     <h2 class="mx-5 my-3"> <span>A</span> la Une</h2>
@@ -140,15 +136,25 @@ require 'inc/header.inc.php';
 
     <!--  div pub -->
 
+
     <div class="container">
 
-        <h2 class="titres my-4 h-3"><span>B</span>ientôt  le livre lumineux ! </h2>
+
+        <div class="box container d_flex my-3">
+            <div class="circle"></div>
+            <p>New</p>
+           
+
+        </div>
+
+        <h2 class="titres my-4 h-3"><span>B</span>ientôt le livre lumineux ! </h2> 
+
 
         <div class="row my-3" id="divpub">
 
 
             <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto imglivre">
-                <img src="assets/img/livre.jpg" class=" imagelivre" img-fluid  alt="image livre" width="200" height="200">
+                <img src="assets/img/livre.jpg" class=" imagelivre" img-fluid alt="image livre" width="200" height="200">
             </div>
 
 
