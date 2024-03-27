@@ -10,58 +10,70 @@ $recherche = $_GET['search1'];
 
 // l'utilisateur saisit une valeur dans le champ de texte et soumet le formulaire, la valeur saisie sera disponible dans la variable $recherche
 
-if(isset($_GET['search1'])) {
+if (isset($_GET['search1'])) {
 
     // Récupérer le mot-clé de la recherche
-  
+
 
     $requete = $pdoLuminaire->prepare("SELECT * FROM produits WHERE categorie LIKE :recherche OR titre LIKE :recherche");
     $requete->execute([
         ':recherche' => '%' . $recherche . '%'
-        
-    ]);
-   
-    if($requete->rowCount() == 0) {
-        echo "Désolé, aucun produit ne correspond à votre recherche.";
-    } 
 
-   
+    ]);
+
+    if ($requete->rowCount() == 0) {
+        echo "Désolé, aucun produit ne correspond à votre recherche.";
+    }
+
+
     // Récupérer les résultats de la requête
 
     $produits = $requete->fetchAll(PDO::FETCH_ASSOC);
-
-
+}
 ?>
- <main>
+<main>
 
 
     <div class="row my-5">
-         <!-- affichage des résultats dans des card bootstraap -->
+        <!-- affichage des résultats dans des card bootstraap -->
         <?php
         foreach ($produits as $card) {
         ?>
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card">
+             <div class="col-12 col-md-6 col-lg-3 ">
+                <div class="card rounded border my-2">
                     <p>
-                        <img src="assets/img/<?php echo $card['image'] ?>" class="img-fluid" alt="image produit">
+                        <img src="assets/img/<?php echo $card['image'] ?>" class="img-fluid rounded " alt="image produit">
                     </p>
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $card['titre']; ?></h5>
-                        <p class="card-text"><?php echo substr($card['description'], 0, 50); ?> ...<a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>">[LIRE LA SUITE]</a></p>
+                        <h5 class="card-title text-uppercase fs-6"><?php echo $card['titre']; ?></h5>
+                        <p class="card-text"><?php echo substr($card['description'], 0, 50);
+                                                // on utilise la fonction prédéfinie substr() afin de délimiter le nombre de caractères à afficher (1 - la chaîne de caractères, 2- notre point de commencement, 3- le nombre de caractères à afficher)
+                                                ?> ...</p>
+
+
                     </div>
-                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir</a>
+                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir La suite</a>
+
                     <a href="ajouter_panier.php?id_produit=<?php echo "$card[id_produit]"; ?>" class="btn btn-primary">ajouter au panier</a>
                     <?php if (estAdmin()) { ?>
-                    <a href="produits.php?action=suppression&id_produit=<?php echo $card['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning">Supprimer</a>
+
+                        <a href="produits.php?action=suppression&id_produit=<?php echo $card['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning">Supprimer</a>
                     <?php } ?>
+
+                    <div class="card-footer">
+                        <p class="text-success" > En stock <?php echo $card['stock'] ?></p>
+                        <p class="pprix"><?php
+
+                            echo $card['prix'] . " " . "EUR";  ?></p>
+                    </div>
                 </div>
+
             </div>
         <?php } ?>
     </div>
-<?php
-}
-?></main>   <!-- Afficher les résultats -->
-   
+
+</main> <!-- Afficher les résultats -->
+
 
 
 <!-- Formulaire de recherche -->

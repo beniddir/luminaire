@@ -40,7 +40,7 @@ require 'inc/header.inc.php';
         Dans l'univers de l'éclairage domestique et extérieur</p>
     <?php
     /* 1- Faire la requete */
-    $requete = $pdoLuminaire->query("SELECT * FROM produits ORDER BY id_produit DESC LIMIT 0,16");
+    $requete = $pdoLuminaire->query("SELECT * FROM produits ORDER BY id_produit DESC LIMIT 0,12");
     // Grâce aux valeur précisées après le LIMIT, je donne d'abord l'information de l'index par lequel je veux commencer (0 est le premier index du tableau) et combien de résultat je veux (16) 
     ?>
     <div class="row my-5">
@@ -48,31 +48,47 @@ require 'inc/header.inc.php';
         while ($card = $requete->fetch(PDO::FETCH_ASSOC)) {
         ?>
             <div class="col-12 col-md-6 col-lg-3 ">
-                <div class="card">
+                <div class="card rounded border my-2">
                     <p>
-                        <img src="assets/img/<?php echo $card['image'] ?>" class="img-fluid" alt="image produit">
+                        <img src="assets/img/<?php echo $card['image'] ?>" class="img-fluid rounded " alt="image produit">
                     </p>
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $card['titre']; ?></h5>
+                        <h5 class="card-title text-uppercase fs-6"><?php echo $card['titre']; ?></h5>
                         <p class="card-text"><?php echo substr($card['description'], 0, 50);
                                                 // on utilise la fonction prédéfinie substr() afin de délimiter le nombre de caractères à afficher (1 - la chaîne de caractères, 2- notre point de commencement, 3- le nombre de caractères à afficher)
-                                                ?> ...<a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>">[LIRE LA SUITE]</a></p>
+                                                ?> ...</p>
 
 
                     </div>
-                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir</a>
+                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir La suite</a>
 
                     <a href="ajouter_panier.php?id_produit=<?php echo "$card[id_produit]"; ?>" class="btn btn-primary">ajouter au panier</a>
                     <?php if (estAdmin()) { ?>
 
                         <a href="produits.php?action=suppression&id_produit=<?php echo $card['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning">Supprimer</a>
                     <?php } ?>
+
+                    <div class="card-footer">
+                        <p class="text-success"> En stock : <?php echo $card['stock'] ?></p>
+                        <p class="pprix"><?php
+
+                            echo $card['prix'] . " " . "EUR";  ?></p>
+                    </div>
                 </div>
 
             </div>
         <?php } ?>
 
     </div>
+     <style>
+        .card {
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.07);
+        }
+    </style> 
 
     <!--  div Boutique -->
 
@@ -143,11 +159,11 @@ require 'inc/header.inc.php';
         <div class="box container d_flex my-3">
             <div class="circle"></div>
             <p>New</p>
-           
+
 
         </div>
 
-        <h2 class="titres my-4 h-3"><span>B</span>ientôt le livre lumineux ! </h2> 
+        <h2 class="titres my-4 h-3"><span>B</span>ientôt le livre lumineux ! </h2>
 
 
         <div class="row my-3" id="divpub">
@@ -160,7 +176,7 @@ require 'inc/header.inc.php';
 
             <div class="col-sm-12 col-md-6 col-lg-6 " id="pub">
                 <p class=" border  mx-auto  p-5 shadow bg-warning">
-                    Plongez dans une expérience de lecture sans pareille où chaque mot brille d'une lueur douce et apaisante. <span class=bg-warning>Luminaire</span> vous offre le confort de lire à tout moment même sous les étoiles.
+                    Plongez dans une expérience de lecture sans pareille où chaque mot brille d'une lueur douce et apaisante.Luminaire vous offre le confort de lire à tout moment même sous les étoiles.
                 </p>
             </div>
             <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto" id="imgfille">

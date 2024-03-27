@@ -197,6 +197,24 @@ h2{
   font-style: italic;
   font-size: 20px;
 }
+
+
+/* style card */
+
+
+.card {
+  transition: transform 0.3s;/* transition": C'est la propriété CSS qui permet de définir une transition pour les changements d'état d'un élément. */
+}
+
+.card:hover {
+  transform: scale(1.07); /* "transform": C'est la propriété CSS qui permet d'appliquer des transformations (comme la mise à l'échelle, la rotation, le déplacement, etc.) à un élément.
+  "0.3s": C'est la durée de la transition, spécifiée en secondes (s). Dans cet exemple, la transition durera 0.3 secondes. */
+}
+.pprix{
+  font-weight: bold;
+  color: #ffde59;
+}
+/* fin style card  */
 /* style circle */
 .box {
   position: relative;
