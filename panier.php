@@ -13,8 +13,11 @@ $paragraphe = "";
 
 /*  3 inclure le contenu d'un fichie"header.inc.php"*/
 require 'inc/header.inc.php';
-
+// Initialisation d'une variable $total pour stocker le prix total du panier
 $total = 0;
+
+
+
 // 4 traitement formulaire valider le panier
 if (isset($_POST['valider'])) {
     if (!empty($_SESSION['panier'])) {
@@ -63,7 +66,7 @@ if (isset($_POST['valider'])) {
 if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_produit'])) {
     // Vérifie si toutes les informations nécessaires sont présentes dans l'URL
 
-    $delete = $_GET['id_produit'];//permet de récupérer id_ produit à partir de l'URL et de le stocker dans la variable $delete
+    $delete = $_GET['id_produit']; //permet de récupérer id_ produit à partir de l'URL et de le stocker dans la variable $delete
     unset($_SESSION['panier'][$delete]); // Supprime l'élément correspondant de la session panier
 
     $contenu .= "<div class=\"alert alert-success\">Le produit a bien été supprimé</div>";
@@ -75,7 +78,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
 
     <?php echo $contenu ?> <br>
     <?php echo $paragraphe ?>
-   <h2> luminaire - Votre Panier </h2>
+    <h2> luminaire - Votre Panier </h2>
 
 
     <a href="index.php" class="btn btn-info  my-2 d-bloc border rounded-pill">Poursuivre les achats </a>
@@ -97,11 +100,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
             </tr>
         </thead>
         <tbody>
-
-
-
+            
             <?php
-            // Initialisation d'une variable $total pour stocker le prix total du panier
 
             // Vérification si la variable de session 'panier' est définie
             if (isset($_SESSION['panier'])) {
@@ -158,7 +158,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
                 <tr>
                     <th colspan="2">Quantité Total: <?php echo array_sum($_SESSION['panier']) ?></th>
                     <!-- est une fonction PHP qui calcule la somme des valeurs d'un tableau. Dans ce cas, elle est utilisée pour calculer la somme des valeurs des produits dans le panier, qui sont stockées dans la variable de session 'panier' -->
-                    <th colspan="3" >Prix Total: <?php echo $total ?> euro</th>
+                    <th colspan="3">Prix Total: <?php echo $total ?> euro</th>
                 </tr>
             <?php
             }

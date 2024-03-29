@@ -94,7 +94,7 @@ $affichageCom->execute([
 
         <h2> <span>F</span>iche produit:</h2>
         <!-- 1 affiche du produit dans une carte -->
-        <div class="card">
+        <div class="card ">
             <div class="card-header">
                 <h3 class="text-center"><?php echo "$produit[titre] " ?></h3>
             </div>
@@ -120,7 +120,6 @@ $affichageCom->execute([
                 </div>
 
                 <!-- bouton ajouter au panier  -->
-
                 <a href="ajouter_panier.php?id_produit=<?php echo "$produit[id_produit]"; ?>" class="btn btn-primary">ajouter au panier</a>
 
 

@@ -44,7 +44,7 @@ require 'inc/header.inc.php';
                     <td><?php echo $produit['stock']; ?></td>
                     <td><?php 
                     if($produit['stock'] < 10){
-                        echo " <pan class=\"text-danger \">il reste que $produit[stock] en stock </pan> ";
+                        echo " <pan class=\"bg-danger \">il reste que $produit[stock] en stock </pan> ";
                     }else{
                         echo" <pan class=\"text-success \"> en stock </pan> " ;
                     }

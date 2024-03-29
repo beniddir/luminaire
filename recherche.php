@@ -14,7 +14,6 @@ if (isset($_GET['search1'])) {
 
     // Récupérer le mot-clé de la recherche
 
-
     $requete = $pdoLuminaire->prepare("SELECT * FROM produits WHERE categorie LIKE :recherche OR titre LIKE :recherche");
     $requete->execute([
         ':recherche' => '%' . $recherche . '%'
