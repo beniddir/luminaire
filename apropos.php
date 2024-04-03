@@ -19,8 +19,8 @@ require 'inc/header.inc.php';
             <img src="assets/img/imgslider.jpg " alt="image slider" class="img-fluid">
 
         </div>
-        <div class="col-6 textpageapropos text-center">
-            <h4 class="pt-3">À propos de nous</h4>
+        <div class="col-6 textpageapropos text-center d-none d-lg-block ">
+            <h4 class="pt-3 ">À propos de nous</h4>
             <p class="border p-2 ">Que de chemin parcouru en 13 ans... et ce n’est qu’un début ! Notre petite start-up parisienne, Pure Player du design a bien grandi !
                 Luminaire c’est du digital bien sûr (nous sommes classés parmi les meilleurs sites e-commerce de France) mais c’est aussi et surtout une formidable aventure humaine.</p>
         </div>

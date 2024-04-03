@@ -3,7 +3,6 @@
 /* 1- Co BDD */
 require 'inc/init.inc.php';
 
-
 /* 2- Réception des infos de l'article sélectionné par son id */
 if (isset($_GET['id_produit'])) {
     $info = $pdoLuminaire->prepare("SELECT * FROM produits WHERE  id_produit = :id_produit");
@@ -20,7 +19,7 @@ if (isset($_GET['id_produit'])) {
     exit();
 }
 
-/* 3- Mise à jour de l'article */
+/* 3- traitement de formulaire de mise ajour d'un produit */
 if (!empty($_POST['majA'])) {
     //a. protection injection SQL
     $_POST['image'] = htmlspecialchars($_POST['image']);
@@ -28,7 +27,6 @@ if (!empty($_POST['majA'])) {
     $_POST['description'] = htmlspecialchars($_POST['description']);
     $_POST['prix'] = htmlspecialchars($_POST['prix']);
     $_POST['stock'] = htmlspecialchars($_POST['stock']);
-
 
     //b. préparation de la requête
     $maj = $pdoLuminaire->prepare("UPDATE produits SET image = :image, titre = :titre, description = :description, prix = :prix, stock = :stock, categorie =:categorie  WHERE id_produit = :id_produit ");
@@ -54,16 +52,17 @@ if (!empty($_POST['majA'])) {
 
 /* 4- Affectation des variables et appel du header */
 $title = $produit['titre'];
-
+/* inclure le header*/
 require 'inc/header.inc.php';
-/* 5- Publier un commentaire */
+
+/* 5- traitement formulaire ajout d'un commentaire  */
 
 if (!empty($_POST['com'])) {
     // a. Protection contre les injections SQL
     $_POST['commentaire'] = htmlspecialchars($_POST['commentaire']);
 
     // b. La requête
-    $ajoutCom = $pdoLuminaire->prepare("INSERT INTO commentaires (id_produit, id_utilisateur, commentaire, date) VALUES (:id_produit, :id_utilisateur, :commentaire, NOW())");
+    $ajoutCom = $pdoLuminaire->prepare("INSERT INTO commentaires (id_produit, id_utilisateur, commentaire, date, valide) VALUES (:id_produit, :id_utilisateur, :commentaire, NOW(), 0)");
 
     // c. J'associe les marqueurs à leurs valeurs
     $ajoutCom->execute([
@@ -71,81 +70,66 @@ if (!empty($_POST['com'])) {
         ':id_utilisateur' => $_SESSION['utilisateurs']['id_utilisateur'],
         ':commentaire' => $_POST['commentaire']
     ]);
+    $contenu .= "<div class=\"alert alert-danger\">Merci pour votre commentaire sa publication sera valider par l'administrateur !</div>";
 }
 
-/* 6- Afficher les commentaires de produit sélectionné */
-$affichageCom = $pdoLuminaire->prepare("SELECT * FROM commentaires, utilisateurs  WHERE commentaires.id_produit = :id_produit AND commentaires.id_utilisateur = utilisateurs.id_utilisateur");
+/* 6- Afficher les commentaires de produit sélectionné qui sont validés */
+
+$affichageCom = $pdoLuminaire->prepare("SELECT * FROM commentaires, utilisateurs WHERE commentaires.id_produit = :id_produit AND commentaires.id_utilisateur = utilisateurs.id_utilisateur AND commentaires.valide = 1");
 
 $affichageCom->execute([
     ':id_produit' => $_GET['id_produit'],
 ]);
 
-
-
-
-
-
 ?>
 <main class="container">
-
-
+    <?php echo $contenu ?>
 
     <section class="row my-5">
 
         <h2> <span>F</span>iche produit:</h2>
         <!-- 1 affiche du produit dans une carte -->
         <div class="card ">
-            <div class="card-header">
-                <h3 class="text-center"><?php echo "$produit[titre] " ?></h3>
-            </div>
+
+            <h3 class=" card-header text-center"><?php echo "$produit[titre] " ?></h3>
+
             <div class="card-body ">
 
                 <p class="text-center">
                     <img src="assets/img/<?php echo $produit['image'] ?>" class="img-fluid " alt="image produit">
                 </p>
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $produit['categorie']; ?></h5>
-                    <p class=""> <?php echo $produit['image'] ?></p>
-                    <p class=""><?php echo $produit['description'] ?></p>
-                    <p class=""> <?php echo $produit['prix'] ?> €</p>
-                    <p class="text-success"> Stock:<?php echo $produit['stock'] ?> </p>
-                    <!--  alert pour admin il a moins de 10 piece en stock  -->
-                    <?php
-                    if (estAdmin() && $produit['stock'] < 10) {
-                        echo "<script>alert('Vous avez moins de 10 pièces en stock');</script>";
-                    }
-                    ?>
 
-
-                </div>
+                <h5 class="card-title"><?php echo $produit['categorie']; ?></h5>
+                <p class=""> <?php echo $produit['image'] ?></p>
+                <p class=""><?php echo $produit['description'] ?></p>
+                <p class=""> <?php echo $produit['prix'] ?> €</p>
+                <p class="text-success"> Stock:<?php echo $produit['stock'] ?> </p>
+                <!--  alert pour admin il a moins de 10 piece en stock  -->
+                <?php
+                if (estAdmin() && $produit['stock'] < 10) {
+                    echo "<script>alert('Vous avez moins de 10 pièces en stock');</script>";
+                }
+                ?>
 
                 <!-- bouton ajouter au panier  -->
                 <a href="ajouter_panier.php?id_produit=<?php echo "$produit[id_produit]"; ?>" class="btn btn-primary">ajouter au panier</a>
 
 
-
-                <!--  supprimer un produit if admin -->
+                <!--  supprimer un produit if admin  code de suppression page produits.php-->
 
                 <?php if (estAdmin()) { ?>
                     <a href="produit.php?action=suppression&id_produit=<?php echo $produit['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning btn-rounded">Supprimer</a> <?php } ?>
             </div>
         </div><!-- fin card-body -->
-        </div><!-- fin card -->
-        </div><!-- fin de la colonne -->
-
-
 
         <!-- fin de l'affichage  -->
 
         <!-- 2 formulaire de mise a jour  afficher  que pour admin  -->
 
-
         <?php if (estAdmin()) { ?>
             <div class="col-12 col-md-8  container-fluid  bg-info d-flex flex-column  align-items-center justify-content-center p-5">
 
                 <h2 class="text-light shadow "> Mise à jour d'un produit </h2>
-
-
 
                 <form action="#" method="POST" class="col-12 col-md-8 alert- alertdark">
                     <!-- /!\ Il est essentiel lorsque l'on fait un formulaire de mise à jour de passer en value les données existantes : cela permet de voir ce qui existe et ce que l'on veut modifier -->
@@ -234,7 +218,7 @@ $affichageCom->execute([
         <?php } ?>
 
 
-        <!-- affichage de commentaire  -->
+        <!-- affichage de commentaire la requete commentaire 6 -->
         <?php
         if ($affichageCom->rowCount() == 0) {
             echo "<div class=\"alert alert-secondary\">Il n'y a pas encore de commentaire sur ce produit</div>";
@@ -248,10 +232,7 @@ $affichageCom->execute([
             }
         }
 
-
-
         ?>
-
 
     </section>
 </main><!-- fin page  -->

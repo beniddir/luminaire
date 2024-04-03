@@ -9,7 +9,7 @@ $h1 = 'luminaire- Les Produit';
 $paragraphe = 'Affichage des Produits ';
 require 'inc/header.inc.php';
 
-/* 3- Suppression d'un article */
+/* 3- Suppression d'un produit */
 if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['id_produit'])) { // jé vérifie que toutes les infos ci-dessus (action, action qui correspond à suppression et id_produit) sont bien présentes dans l'url
     $delete = $pdoLuminaire->prepare("DELETE FROM produits WHERE id_produit = :id_produit");
 

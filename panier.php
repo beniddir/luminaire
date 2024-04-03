@@ -3,20 +3,13 @@
 /*1 Connexion à la base de données */
 require 'inc/init.inc.php';
 
-/* 2Affectation des variables et appel du header */
+/* 2 Affectation des variables et appel du header */
 $title = "Votre panier";
 $h1 = "panier";
 
 $paragraphe = "";
 
-
-
-/*  3 inclure le contenu d'un fichie"header.inc.php"*/
-require 'inc/header.inc.php';
 // Initialisation d'une variable $total pour stocker le prix total du panier
-$total = 0;
-
-
 
 // 4 traitement formulaire valider le panier
 if (isset($_POST['valider'])) {
@@ -69,9 +62,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
     $delete = $_GET['id_produit']; //permet de récupérer id_ produit à partir de l'URL et de le stocker dans la variable $delete
     unset($_SESSION['panier'][$delete]); // Supprime l'élément correspondant de la session panier
 
-    $contenu .= "<div class=\"alert alert-success\">Le produit a bien été supprimé</div>";
+    /* $contenu .= "<div class=\"alert alert-success\">Le produit a bien été supprimé</div>"; */
+    header('location:panier.php');
+    exit();
 }
-
+/*  3 inclure le contenu d'un fichie"header.inc.php"*/
+require 'inc/header.inc.php';
 ?>
 
 <main class="container">
@@ -100,9 +96,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
             </tr>
         </thead>
         <tbody>
-            
-            <?php
 
+            <?php
+            $total = 0;
             // Vérification si la variable de session 'panier' est définie
             if (isset($_SESSION['panier'])) {
                 // Récupération des clés (identifiants de produits) de la variable de session 'panier' dans un tableau $ids
@@ -163,18 +159,22 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
             <?php
             }
             ?>
+        </tbody>
 
     </table>
 
 
     <!--  formulaire valider le panier -->
+    <form method="post" action="panier.php" class="bg-dark d-flex align-items-center justify-content-center">
+    <label for="total" class="text-light">Prix Total</label>
+    <!-- Champ de formulaire caché pour stocker la valeur de $total -->
+    <input type="hidden" name="total" value="<?php echo $total ?>">
+    <!-- Affichage du prix total -->
+    <?php echo $total ?>
+    <button type="submit" name="valider" class="btn btn-warning border rounded-pill ms-5">Valider</button>
+</form>
 
-    <form method="post" action="panier.php" class="bg-dark d-flex  align-items-center justify-content-center">
-        <label for="total" class="text-light">Prix Total</label>
-        <input type="number" name="total" id="total" value="<?php echo $total ?>" class=" dorder rounded ">
-        <button type="submit" name="valider" class="btn btn-warning  border rounded-pill ms-5">Valider</button>
-    </form>
-
+    
 
 </main>
 

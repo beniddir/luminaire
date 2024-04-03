@@ -59,9 +59,8 @@
                 <div class="d-inline-block">
                     <a href="connexion.php"><i class="bi bi-person-plus-fill "></i></a>
                     <?php
-                    if (!estConnecte()) { 
+                    if (!estConnecte()) {
                         echo '<p class="pheader">Connexion</p>';
-
                     } else {
                         echo '<p class="pheader">Connecté(e)</p>';
                     } ?>
@@ -115,18 +114,19 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="admin.php">Voir les commandes </a>
+                    <a class="nav-link" href="admin.php"> les commandes </a>
 
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="gestionstock.php">Gestion Stock </a>
+                    <a class="nav-link" href="gestionstock.php"> Stock </a>
 
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="commentaire.php">Les Commentaires</a>
 
-            <?php } ?>
-            </ul>
+                </li <?php } ?> </ul>
 
         </nav>
         <!-- fin  navbar desktop -->

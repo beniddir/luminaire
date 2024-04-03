@@ -4,6 +4,8 @@ require 'inc/init.inc.php';
 
 /* 2- récupération des infos de la personne connectée */
 if (isset($_GET['id_utilisateur']) && $_SESSION['utilisateurs']['id_utilisateur'] == $_GET['id_utilisateur']) {
+    /*verifier si Id_utilisateur dans $GET et le meme que l'utilisateur connecter) 
+    */
     $resultat = $pdoLuminaire->prepare(" SELECT * FROM utilisateurs WHERE id_utilisateur = :id_utilisateur ");
 
     $resultat->execute(array(
@@ -19,9 +21,6 @@ if (isset($_GET['id_utilisateur']) && $_SESSION['utilisateurs']['id_utilisateur'
     header('location:index.php');
     exit();
 }
-
-
-/* 4-Traitement du form */
 
 /* 4-Traitement du form */
 if (!empty($_POST)) {

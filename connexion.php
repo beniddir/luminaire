@@ -6,6 +6,11 @@ $h1='luminaire - contact';
 
 
 /* 3- Traitement du formulaire de connexion */
+if(estConnecte()){   
+    $contenu .= "<div class=\"alert alert-danger\">
+    Vous êtes déjà connecté! </div>";
+}
+
 if (!empty($_POST)) {
 
     if (empty($_POST['email']) || empty($_POST['mdp'])) {
