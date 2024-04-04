@@ -9,9 +9,6 @@ $title = 'Luminaire - Contact';
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
-
-
-
 // Vérification si le formulaire est soumis
 if (isset($_POST['envoyer'])) {
     // Récupérer les données du formulaire
@@ -24,11 +21,9 @@ if (isset($_POST['envoyer'])) {
     $destinataire = "luminaire@email.com"; // Adresse email à laquelle vous souhaitez recevoir les messages
     $sujet = "Nouveau message de contact";
     $corps_message = "Email: $email\n\nMessage: $message";
-    //La séquence \n représente un saut de ligne, donc cette ligne crée un message qui affiche l'adresse e-mail suivie de deux sauts de ligne, puis le message fourni.
     // Envoyer l'email
     if (mail($destinataire, $sujet, $corps_message)) {
         $contenu .= "<div class=\"alert alert-success\">Votre message a été envoyé avec succès.</div>";
-        
     } else {
         $contenu .= "<div class=\"alert alert-danger\">Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.</div>";
     }

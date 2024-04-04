@@ -114,12 +114,12 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="admin.php"> les commandes </a>
+                    <a class="nav-link" href="admin.php"> Les Commandes </a>
 
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="gestionstock.php"> Stock </a>
+                    <a class="nav-link" href="gestionstock.php"> Le Stock </a>
 
                 </li>
 
@@ -168,8 +168,13 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="admin.php">Admin</a>
-
+                                <a class="nav-link" href="admin.php">Les commandes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gestionstock.php">Le Stock </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="commentaire.php">Les Commentaires </a>
                             </li>
 
                         <?php } ?>

@@ -50,7 +50,7 @@ require 'inc/header.inc.php';
 
     <?php echo "<p class=\" alert alert-success\">" . $paragraphe . "</p>"; ?>
 
-    <div class=" container-fluid bg-primary d-flex flex-column  align-items-center justify-content-center"">
+    <div class=" container-fluid bg-primary d-flex flex-column  align-items-center justify-content-center">
     <h2 class=" text-light my-4"> Ajout d'un Produit</h2>
 
         <form action="#" method="POST" class=" alert alert-dark p-3 col-12 col-md-5">

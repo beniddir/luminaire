@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 
 
 /*  style général */
@@ -16,7 +18,8 @@
 }
 
 #nomsite {
-  font-family: 'Aclonica', sans-serif;
+  /*  font-family: 'Aclonica', sans-serif;*/
+  font-family: 'Pacifico';
   color: #ffde59;
   font-style: italic;
   text-decoration: none;
@@ -110,6 +113,7 @@
   width:50%;
   z-index: 1999;
   transition: top 0.9s;
+  height: 600px ;
 
 }
 
@@ -224,6 +228,7 @@ h2{
   color: #ffbd59;
   cursor: pointer;/*  curseur change en main quand on survol le cyrcle */
   transition: transforme 0.4s cubic-bezier(0.23, 1.83, 0.42, 1.19);
+  /*  */
 }
 
 .box p {
@@ -240,16 +245,18 @@ h2{
   height: 50px;
   border: 3px solid #f1f1f1;
   border-radius: 50%;
+   /*animation:  propriété CSS pour faire animation sur un element boxMagic le nom d'animation 
+   1s : duré de l'animation ,Linear: animation progresse linear , infinte , alterne direction :*/ 
   animation: 1s linear infinite alternate boxMagic,
-    4s linear infinite spinning;
+  4s linear infinite spinning;
   padding-top: 60px;
   /*  pour deformer le circcle il depasse 320 et box sizinz a revoir  */
 }
-
+ /* @keyframes est une règle CSS qui permet de définir des étapes spécifiques d'une animation.  */
 @keyframes boxMagic {
   from {
-    box-shadow:
-      0 0 0 #feac5e,
+    box-shadow:/*  l'ombre composé de plusieurs couches  */
+      0 0 0 #feac5e, /* une  ombre avec décalage horizontale , verticale , flou */
       0 0 0 #c779d0,
       0 0 0 #4bc0c8,
       0 0 0 #42db75;
@@ -266,11 +273,11 @@ h2{
 
 @keyframes spinning {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg);/*  pas de rotation */
   }
 
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg); /* rotation de 360deg */
   }
 }
 
