@@ -10,8 +10,32 @@ $title = 'Luminaire - Contact';
 require 'inc/header.inc.php';
 
 
-?>
 
+
+// Vérification si le formulaire est soumis
+if (isset($_POST['envoyer'])) {
+    // Récupérer les données du formulaire
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // Vérifier les données (par exemple, vérifier si l'email est valide)
+
+    // Traitement des données (par exemple, envoi d'un email)
+    $destinataire = "luminaire@email.com"; // Adresse email à laquelle vous souhaitez recevoir les messages
+    $sujet = "Nouveau message de contact";
+    $corps_message = "Email: $email\n\nMessage: $message";
+    //La séquence \n représente un saut de ligne, donc cette ligne crée un message qui affiche l'adresse e-mail suivie de deux sauts de ligne, puis le message fourni.
+    // Envoyer l'email
+    if (mail($destinataire, $sujet, $corps_message)) {
+        $contenu .= "<div class=\"alert alert-success\">Votre message a été envoyé avec succès.</div>";
+        
+    } else {
+        $contenu .= "<div class=\"alert alert-danger\">Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard.</div>";
+    }
+    
+    
+}
+?>
 
 
 <main class="container">
