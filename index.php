@@ -80,7 +80,7 @@ require 'inc/header.inc.php';
         <?php } ?>
 
     </div>
-   
+
     <!--  div Boutique -->
 
     <h2 class="mx-5 my-3"> <span>B</span>outique </h2>
@@ -143,9 +143,7 @@ require 'inc/header.inc.php';
 
     <!--  div pub -->
 
-
     <div class="container">
-
 
         <div class="box container d_flex my-3">
             <div class="circle"></div>
@@ -174,45 +172,10 @@ require 'inc/header.inc.php';
                 <img src="assets/img/livre2.jpg" alt="livrefille" class="img-fluid" width="200" height="150">
             </div>
 
-        </div>
-        <!--  div carrousel -->
+        </div><!-- fin div pub -->
 
-        <div class="row col-6 mx-auto">
-        <div class="row m-5 mx-auto">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner text-center">
-                    <div class="carousel-item active justify-content-center">
-                        <img src="assets/img/livrelum2.jpeg" class="d-block w-30 img-fluid mx-auto "width="200" height="150"
-                            alt="livrelumineux">
-                    </div>
-                    <div class="carousel-item  text-center">
-                        <img src="assets/img/livrelum2.jpeg" class="d-block w-30 img-fluid  mx-auto" width="200" height="150" 
-                            alt="...">
-                    </div>
-                    <div class="carousel-item text-center">
-                        <img src="assets/img/livrelum3.jpg" class="d-block w-30 img-fluid  mx-auto" width="200" height="150" 
-                            alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev  " type="button"
-                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev" id="prev">
-                    <!--  icone  -->
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button"
-                    data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next" id="next">
-                    <!--  icone -->
-                    <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                    <span class="visually-hidden ">Next</span>
-                </button>
-            </div>
-
-        </div>
-        </div>
 
     </div>
-<!-- fin div carrousel -->
 
 
 </main>

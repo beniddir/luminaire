@@ -65,6 +65,7 @@
             <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center ">
                 <i class="bi bi-envelope-at-fill"></i>
                 <p> Luminaire@gmail.com</p>
+                
 
             </div>
             <!--  fin email -->

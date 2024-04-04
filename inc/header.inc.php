@@ -25,14 +25,14 @@
         <div class="row mt-3 ">
             <div class=" d-flex align-items-center  col-sm-12  col-md-12  col-lg-4">
                 <img src="assets/img/logo.png" alt="logo">
-                <a href="index.php" id="nomsite">LUMINAIRE</a>
+                <a href="index.php" id="nomsite">Luminaire</a>
             </div>
             <!--  fin  log + tire  -->
 
             <!--  barre de recherche -->
             <!-- Formulaire de recherche -->
             <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
-                <form class="d-flex h2" role="search" action="recherche.php" method="GET">
+                <form class="d-flex h1 form1" role="search" action="recherche.php" method="GET">
                     <!-- $_SERVER: C'est une superglobale en PHP qui contient plusieurs informations sur le serveur et l'environnement d'exécution.
 ['PHP_SELF']: C'est une clé spécifique de la variable $_SERVER qui renvoie le nom du fichier du script PHP en cours d'exécution, y compris le chemin relatif par rapport au répertoire racine du site web. -->
                     <input class="form-control text-center border rounded-pill" type="search" placeholder="Tapez votre recherche ici" aria-label="Search" name="search1">
@@ -135,8 +135,8 @@
         <div class="navbar-mobile d-block d-md-non d-lg-none">
             <i class="bi bi-list" id="bouton">
             </i>
-            <p id="pmenu">Menu</p>
-            <div class="modale">
+             <p id="pmenu">Menu</p> 
+            <div class="modale" >
                 <div class="navbar-mobile-listes">
                     <ul class="nav ms-3">
                         <li class="nav-item dropdown">
