@@ -22,9 +22,10 @@ if (isset($_GET['id_utilisateur']) && $_SESSION['utilisateurs']['id_utilisateur'
     exit();
 }
 
-/* 4-Traitement du form */
+/* 4-Traitement du form  de mise a jour du profil*/
 if (!empty($_POST)) {
     // Validation des données reçues
+    // a - protéger contre les attaques de type injection de code.
     $_POST['nom'] = htmlspecialchars($_POST['nom']);
     $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
     $_POST['email'] = htmlspecialchars($_POST['email']);
@@ -32,7 +33,7 @@ if (!empty($_POST)) {
     $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
     $_POST['ville'] = htmlspecialchars($_POST['ville']);
 
-    // Vérification de l'existence de l'adresse e-mail dans la base de données pour d'autres utilisateurs
+    //  b- Vérification de l'existence de l'adresse e-mail dans la base de données pour d'autres utilisateurs
     $verifemail = $pdoLuminaire->prepare("SELECT * FROM utilisateurs WHERE email = :email AND id_utilisateur != :id_utilisateur");
     $verifemail->execute([
         ':email' => $_POST['email'],
@@ -42,13 +43,17 @@ if (!empty($_POST)) {
     if ($verifemail->rowCount() > 0) {
         $contenu .= "<div class=\"alert alert-danger\">Cette adresse e-mail est déjà utilisée par un autre utilisateur. Veuillez en choisir une autre.</div>";
     } else {
-        // Modification du profil dans la base de données
-        $modif = $pdoLuminaire->prepare('UPDATE utilisateurs SET nom = :nom, prenom = :prenom, email = :email, telephone = :telephone, adresse = :adresse,  ville = :ville  WHERE id_utilisateur = :id_utilisateur ');
+        
+ 
+         // Modification du profil dans la base de données 
+
+        $modif = $pdoLuminaire->prepare('UPDATE utilisateurs SET nom = :nom, prenom = :prenom, email = :email, mdp = :mdp, telephone = :telephone, adresse = :adresse,  ville = :ville  WHERE id_utilisateur = :id_utilisateur ');
 
         $modif->execute([
             ':nom' => $_POST['nom'],
             ':prenom' => $_POST['prenom'],
             ':email' => $_POST['email'],
+            ':mdp' => $_POST['mdp'],
             ':telephone' => $_POST['telephone'],
             ':adresse' => $_POST['adresse'],
             ':ville' => $_POST['ville'],
@@ -67,7 +72,7 @@ if (!empty($_POST)) {
 
 /* 3- Affichage du header */
 
-$title = 'Blog - Modifiez votre profil';
+$title = 'luminaire - Modifiez votre profil';
 $paragraphe = "";
 $paragraphe = "Modifiez votre profil $fiche[prenom]";
 require 'inc/header.inc.php';
@@ -104,6 +109,11 @@ require 'inc/header.inc.php';
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" id="email" name="email" class="form-control  border rounded" value="<?php echo $fiche['email'] ?>">
+            </div>
+
+            <div class="mb-3">
+                <label for="mdp" class="form-label">Mot de passe</label>
+                <input type="text" id="mdp" name="mdp" class="form-control  border rounded" value="<?php echo $fiche['mdp'] ?>">
             </div>
 
             <div class="mb-3">

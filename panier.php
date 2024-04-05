@@ -166,15 +166,15 @@ require 'inc/header.inc.php';
 
     <!--  formulaire valider le panier -->
     <form method="post" action="panier.php" class="bg-dark d-flex align-items-center justify-content-center">
-    <label for="total" class="text-light">Prix Total</label>
-    <!-- Champ de formulaire caché pour stocker la valeur de $total -->
-    <input type="hidden" name="total" value="<?php echo $total ?>">
-    <!-- Affichage du prix total -->
-    <?php echo $total ?>
-    <button type="submit" name="valider" class="btn btn-warning border rounded-pill ms-5">Valider</button>
-</form>
+        <label for="total" class="text-light">Prix Total</label>
+        <!-- Champ de formulaire caché pour stocker la valeur de $total -->
+        <input type="hidden" name="total" value="<?php echo $total ?>">
+        <!-- Affichage du prix total -->
+        <?php echo $total ?>
+        <button type="submit" name="valider" class="btn btn-warning border rounded-pill ms-5">Valider</button>
+    </form>
 
-    
+
 
 </main>
 

@@ -157,9 +157,8 @@ require 'inc/header.inc.php';
 
         <div class="row my-3" id="divpub">
 
-
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto imglivre">
-                <img src="assets/img/livre.jpg" class=" imagelivre" img-fluid alt="image livre" width="200" height="200">
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto divimage">
+                <img src="assets/img/livre.jpg" class="imagelivre" img-fluid alt="image livre" width="200" height="200" id="imagelivre">
             </div>
 
 
@@ -168,8 +167,9 @@ require 'inc/header.inc.php';
                     Plongez dans une expérience de lecture sans pareille où chaque mot brille d'une lueur douce et apaisante.Luminaire vous offre le confort de lire à tout moment même sous les étoiles.
                 </p>
             </div>
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto" id="imgfille">
-                <img src="assets/img/livre2.jpg" alt="livrefille" class="img-fluid" width="200" height="150">
+
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto divimage1" >
+                <img src="assets/img/livre2.jpg" alt="livrefille" class="img-fluid" width="200" height="150" id="imagelivre1">
             </div>
 
         </div><!-- fin div pub -->

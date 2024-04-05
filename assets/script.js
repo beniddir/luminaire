@@ -107,34 +107,35 @@ exterieur.addEventListener('mouseout', () => {
 /*  section pub */
 
 
-/* * gestion des clique  
+let image = document.querySelector('.divimage');
+let imagelivre = document.querySelector('#imagelivre');
+let originalimageSrc = imagelivre.src;
+let newimageSrc = 'assets/img/livrelum1.jpg';
+let isOriginal = true;
 
-   
-function gestionClick(icons) {
-    for (let a = 0; a < icons.length; a++) {
-        icons[a].addEventListener('click', () => {
-            for (let b = 0; b <= a; b++) {
-                icons[a - b].classList.toggle('bi-star-fill');
-                icons[a - b].classList.toggle('bi-star');
-            }
-        });
+image.addEventListener('click', () => {
+    if (isOriginal) {
+        imagelivre.src = newimageSrc;
+        isOriginal = false;
+    } else {
+        imagelivre.src = originalimageSrc;
+        isOriginal = true;
     }
-}
+});
 
-icone1 = document.querySelectorAll('.b1');
-console.log(icone1);
-gestionClick(icone1);*/ 
+let image1 = document.querySelector('.divimage1');
+let imagelivre1 = document.querySelector('#imagelivre1');
+let originalimage1Src = imagelivre1.src;
+let newimage1Src = 'assets/img/livrelum3.jpg';
+let isOriginal1 = true;
 
-
-/*  section pub */
-
-
-
-/* changement la photo on clique */
-let image = document.querySelector('.imagelivre');
-
-image.addEventListener('click',()=>{
-    image.src="assets/img/livrelum1.jpg";
-})
-
+image1.addEventListener('click', () => {
+    if (isOriginal1) {
+        imagelivre1.src = newimage1Src;
+        isOriginal1 = false;
+    } else {
+        imagelivre1.src = originalimage1Src;
+        isOriginal1 = true;
+    }
+});
 

@@ -21,7 +21,9 @@ if (isset($_GET['search1'])) {
     ]);
 
     if ($requete->rowCount() == 0) {
-        echo "Désolé, aucun produit ne correspond à votre recherche.";
+        $contenu .= "<div class=\"alert alert-danger\"> Désolé, aucun produit ne correspond à votre recherche. !</div>";
+        
+        
     }
 
 
@@ -34,6 +36,8 @@ if (isset($_GET['search1'])) {
 
 
     <div class="row my-5">
+        <h2>Résultats de votre recherche : <?php echo $recherche?></h2>
+        <?php echo $contenu ?>
         <!-- affichage des résultats dans des card bootstraap -->
         <?php
         foreach ($produits as $card) {

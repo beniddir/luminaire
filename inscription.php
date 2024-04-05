@@ -11,6 +11,15 @@ require 'inc/header.inc.php';
 
 /* 3- Inscription sur le site & la BDD */
 if (!empty($_POST)) {
+    // Validation des données reçues
+    // a - protéger contre les attaques de type injection de code.
+    $_POST['nom'] = htmlspecialchars($_POST['nom']);
+    $_POST['prenom'] = htmlspecialchars($_POST['prenom']);
+    $_POST['email'] = htmlspecialchars($_POST['email']);
+    $_POST['telephone'] = htmlspecialchars($_POST['telephone']);
+    $_POST['adresse'] = htmlspecialchars($_POST['adresse']);
+    $_POST['ville'] = htmlspecialchars($_POST['ville']);
+
     /* vérification des champs du formulaire */
 
     if (!isset($_POST['prenom']) || strlen($_POST['prenom']) < 2 || strlen($_POST['prenom']) > 20) {
@@ -39,7 +48,7 @@ if (!empty($_POST)) {
             $contenu .= "<div class=\"alert alert-danger\"> cette adresse mail existe , veuillez en choisir une autre. </div>";
         } else { // email est indisponible, la personne peut donc s'inscrire, on entre les infos en BDD
 
-            // mot de passe 
+            // haché le  mot de passe 
             $mdp = password_hash($_POST['mdp'], PASSWORD_DEFAULT);
             /* Grâce à la fonction prédéfinie password_hash(), on définit que l'on veut hasher un mdp. Cette fonction prend deux arguments : 1- la string, 2- la façon de hasher (iciavec PASSWORD_DEFAULT) */
 
