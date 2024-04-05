@@ -10,7 +10,7 @@
     <!-- Lien LUX Bootswatch -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.2/lux/bootstrap.min.css" integrity="sha512-zTvuig0lp44Ol8dgsXd7DGM3vSuLu8lIaGIEZ9pvh62u5lXNKMqZzqcBxBqju8pacqCCS2J5hWKrVS4IzJXEyQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- lien feuille de style css  -->
-    <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <!--  lien image favicon -->
     <link rel="shortcut icon" href="assets/img/soleil.jpg" type="image/x-icon">
 

@@ -11,7 +11,7 @@
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* style Nom du site LUMINAIRE  */
 #nomsite {
  font-family:'garmond';
   /* 'Aclonica', sans-serif; */
@@ -23,9 +23,7 @@
 
 }
 
-
-
-/* style de navbar */
+/* style de navbar normal */
 .navbar {
   display: flex;
   justify-content:center;
@@ -47,9 +45,9 @@
   
  
 }
-/*  formulaire de recherche  */
+/* style  formulaire de recherche  */
 .form-control {
-        font-size: 10px; 
+        font-size:10px; 
 }
 
 /*  positionnement de la barre */
@@ -62,9 +60,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 55vh;
+  height: 55vh;/* "viewport height" (hauteur de la fenêtre d'affichage).  */
  
-
 }
 
 .navbar-mobile-listes a {
@@ -72,31 +69,33 @@
   color: black;
   font-size: 8px;
   text-transform: capitalize;
+  font-weight: bold;
 
 }
 
-
-
-#bouton {
+.navbar-mobile-listes a:hover   {
+  
+  color: #0cc0df;
+  
+ 
+}
+/* Style du menu burger */
+ #bouton {
   position: fixed;
   top: -25px;
   left: 15px;
   font-weight: bold;
   font-size: 30px;
- 
-  
-
 }
-
+/*  style de menu  */
 #pmenu {
   position: fixed;
   top: 4px;
   left: 70px;
   font-weight: bold;
 }
-
+/*  style de la div qui contient les lien de la nav bar mobile */
 .modale {
-
   position: fixed;
   left: 0px;
   top: -100vh;
@@ -107,48 +106,46 @@
   height: 300px ;
 
 }
-
+/*  style  de modal en md et ms  ce qui permet de l'afficher  */
 .modale-change {
   top: 100px;
 }
 
-
 /*  styles des icons header  */
 
 header i {
-
   padding: 20px;
   font-size: 17px;
  
 }
 
+/*  style logo du site  */
 header img {
   height: 80px;
   width: 80px;
 
 }
+/*  style connexion, panier ,contact  */
 .pheader{
   font-size: 8px;
   
 }
 
-
 /*  fin style header  */
+
+
 /*  style main */
+
 span{
   background-color: #ffbd59;
-  margin-top: 20px;
-  margin-bottom: 20px;
-
-  
- 
+  margin-top: 30px;
+  margin-bottom: 30px; 
 }
 
 /* style div video  */
 
 .divideo {
   position: relative;
-
   width: 100%;
   background-color: #000;
 
@@ -170,7 +167,7 @@ span{
   margin: 0 auto;
   height: 25rem;
 }
-
+/*  bouton découvrir sur la video  */
 .decouvrir {
   color: #f0f0f2;
   position: absolute;
@@ -199,28 +196,30 @@ h2{
 
 
 /* style card */
-
-
 .card {
   transition: transform 0.3s;/* transition": C'est la propriété CSS qui permet de définir une transition pour les changements d'état d'un élément. */
 }
 
 .card:hover {
-  transform: scale(1.07); /* "transform": C'est la propriété CSS qui permet d'appliquer des transformations (comme la mise à l'échelle, la rotation, le déplacement, etc.) à un élément.
-  "0.3s": C'est la durée de la transition, spécifiée en secondes (s). Dans cet exemple, la transition durera 0.3 secondes. */
+  transform: scale(1.07); /* "transform": C'est la propriété CSS qui permet d'appliquer des transformations ( la rotation, le déplacement, etc.) à un élément.
+  "0.3s": C'est la durée de la transition  */
+  /*  scale(1.07) permet grandir l'element de 7% a sa taille d'origine */
 }
 .pprix{
   font-weight: bold;
   color: #ffde59;
 }
 /* fin style card  */
-/* style circle */
+
+
+/* style circle  dans section pub */
+
 .box {
   position: relative;
-  color: #ffbd59;
-  cursor: pointer;/*  curseur change en main quand on survol le cyrcle */
+  color: #9959ff;
   transition: transforme 0.4s cubic-bezier(0.23, 1.83, 0.42, 1.19);
-  /*  */
+  /*cubic-bezier(0.23, 1.83, 0.42, 1.19) définit la courbe de vitesse de la transition. */
+
 }
 
 .box p {
@@ -334,7 +333,6 @@ h2{
   position: absolute;
   bottom: -3%;
   
-
 }
 
 .exterieur{
@@ -344,28 +342,9 @@ h2{
   position: absolute;
   bottom: -3%;
   
-
 }
-
-
 
 /* fin style js boutique  */
-
-/* div pup */
-#divpub{
-  position:relative
-}
-
-
-/*.imglivre{
-  position: absolute;
-  bottom: 0%;
-  left: 80%;
-}
- 
-*/
-
-
 
 /* style footer */
 

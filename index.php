@@ -11,14 +11,13 @@ require 'inc/header.inc.php';
 ?>
 <main class="container">
 
-
     <!--  div vidéo -->
     <div class="container-fluid divideo">
         <h2 class="titrevideo"> Des éclairages <br> exceptionnels <br>pour votre<br> quotidien</h2>
         <video class="object-fit-fill  controls" autoplay="autoplay" muted=" " loop="infinite" id="video">
             <source src="assets/img/v.mp4">
             <!--  oject-fit-cover prend la largeur de son container  :
-         controls :
+
          -->
 
         </video>
@@ -27,10 +26,7 @@ require 'inc/header.inc.php';
     <a href="produits.php" class=" decouvrir">Découvrir </a>
     </div>
     <!-- fin div video -->
-    <!--   <div class=" container d-flex align-items-center my-3">
-        
-     
-    </div>-->
+    <!--   <-- class=" container d-flex align-items-center my-3"> -->
 
     <h2 class="mx-5 my-3"> <span>A</span> la Une</h2>
 
@@ -57,8 +53,6 @@ require 'inc/header.inc.php';
                         <p class="card-text"><?php echo substr($card['description'], 0, 50);
                                                 // on utilise la fonction prédéfinie substr() afin de délimiter le nombre de caractères à afficher (1 - la chaîne de caractères, 2- notre point de commencement, 3- le nombre de caractères à afficher)
                                                 ?> ...</p>
-
-
                     </div>
                     <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir La suite</a>
 
@@ -95,7 +89,6 @@ require 'inc/header.inc.php';
 
             </div>
             <!--  fin div salon-->
-
             <div class="col-sm-12 col-md-6 col-lg-3">
 
                 <div class="chambre">
@@ -118,10 +111,7 @@ require 'inc/header.inc.php';
                 <div class="cuisine ">
                     <img src="assets/img/eclairage cuisine.jpg" alt="image cuisine" class="img-fluid" id="imgcuisine">
                     <div class="liencuisine"><a href="cuisine.php">éclairage cuisine</a></div>
-
-                    <!-- fin div cuisine   -->
-
-                </div>
+                </div> <!-- fin div cuisine   -->
                 <div class="exterieur mt-2 ">
 
                     <img src="assets/img/Eclairage extérieur.jpg" alt="eclairage extérieur" class="img-fluid" id="imgext">
@@ -133,8 +123,6 @@ require 'inc/header.inc.php';
                 </div>
 
             </div>
-
-
         </div>
 
     </div>
@@ -148,8 +136,6 @@ require 'inc/header.inc.php';
         <div class="box container d_flex my-3">
             <div class="circle"></div>
             <p>New</p>
-
-
         </div>
 
         <h2 class="titres my-4 h-3"><span>B</span>ientôt le livre lumineux ! </h2>
@@ -168,13 +154,11 @@ require 'inc/header.inc.php';
                 </p>
             </div>
 
-            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto divimage1" >
+            <div class="col-sm-12 col-md-3 col-lg-3 text-center my-auto divimage1">
                 <img src="assets/img/livre2.jpg" alt="livrefille" class="img-fluid" width="200" height="150" id="imagelivre1">
             </div>
 
         </div><!-- fin div pub -->
-
-
     </div>
 
 
