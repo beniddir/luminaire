@@ -314,7 +314,6 @@ h2{
   position: absolute;
   bottom: -2%;
   
-
 }
 
 .chambre{
@@ -324,7 +323,6 @@ h2{
   position: absolute;
   bottom: -2%;
   
-
 }
 .sallebain{
   position: relative;
@@ -332,7 +330,7 @@ h2{
 .liensallebain{
   position: absolute;
   bottom: -3%;
-  
+
 }
 
 .exterieur{
@@ -392,7 +390,7 @@ h3{
  text-transform: uppercase;
 }
 p{
-  font-size: 14px;
+  font-size: 15px;
 
 }
 

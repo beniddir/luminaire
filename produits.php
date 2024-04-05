@@ -28,7 +28,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
 
 <main class="container">
 
-    <h2>Boutiques</h2>
+    <h2>Boutique</h2>
     <?php  if(estAdmin()){?>
 
         <a href="ajouterunproduit.php" class="btn btn-warning">ajouter un article</a>
@@ -50,14 +50,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
                         <img src="assets/img/<?php echo $card['image'] ?>" class="img-fluid" alt="image produit">
                     </p>
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $card['titre']; ?></h5>
+                        <h5 class="card-title text-uppercase fs-6"><?php echo $card['titre']; ?></h5>
                         <p class="card-text"><?php echo substr($card['description'], 0, 50);
                                                 // on utilise la fonction prédéfinie substr() afin de délimiter le nombre de caractères à afficher (1 - la chaîne de caractères, 2- notre point de commencement, 3- le nombre de caractères à afficher)
-                                                ?> ...<a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>">[LIRE LA SUITE]</a></p>
+                                                ?> ... </a></p>
 
 
                     </div>
-                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir</a>
+                    <a href="produit.php?id_produit=<?php echo $card['id_produit']; ?>" class="btn btn-info">Voir La Suite</a>
 
 
                     <a href="ajouter_panier.php?id_produit=<?php echo "$card[id_produit]"; ?>" class="btn btn-primary">ajouter au panier</a>
