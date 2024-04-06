@@ -94,7 +94,7 @@ require 'inc/header.inc.php';
                 <div class="chambre">
 
                     <img src="assets/img/eclairagechambre.jpg" alt="image chambre" class="img-fluid" id="imgchambre">
-                    <div class="lienchambre"> <a href="chambreadulte.php">éclairage chambre </a></div>
+                    <div class="lienchambre"> <a href="chambre.php">éclairage chambre </a></div>
 
                 </div>
 

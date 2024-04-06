@@ -81,12 +81,13 @@
                 <li class="nav-item dropdown">
                     <!-- "nav-item" : Cette classe est utilisée pour définir un élément de navigation dans une barre de navigation Bootstrap -->
                     <!--"dropdown" : Cette classe est utilisée pour indiquer que l'élément de navigation est un menu déroulant  -->
-                    <a href="#" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"> éclairage Chambre</a>
+                    <a href="chambre.php" class="nav-link  dropdown-toggle" data-bs-toggle="dropdown"> éclairage Chambre</a>
                     <!-- nav-link :Elle applique un style de lien spécifique bootstrap -->
                     <!-- dropdown-toggleelle ajoute une petite flèche à droite du lien pour indiquer aux utilisateurs qu'un menu déroulant est associé à ce lien   -->
                     <!-- data-bs-toggle permettre à l'utilisateur d'activer ou désactiver les menu déroulant  par un clic. -->
 
                     <ul class="dropdown-menu">
+                 
                         <li><a href="chambreadulte.php" class="dropdown-item">Chambre Adulte</a></li>
                         <li><a href="chambreenfant.php" class="dropdown-item">Chambre Enfant</a> </li>
 
