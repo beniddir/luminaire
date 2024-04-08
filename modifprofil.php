@@ -71,7 +71,7 @@ if (!empty($_POST)) {
 }
 
 
-/* 3- Affichage du header */
+/* donner les valeurs  et inclure de header*/
 
 $title = 'luminaire - Modifiez votre profil';
 $paragraphe = "";
@@ -144,5 +144,6 @@ require 'inc/header.inc.php';
 </main>
 
 <?php
+/*  inclure le footer */
 require 'inc/footer.inc.php';
 ?>

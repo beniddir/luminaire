@@ -5,7 +5,7 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - apropos';
-$h1='apropos';
+$h1 = 'apropos';
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
@@ -57,7 +57,7 @@ require 'inc/header.inc.php';
         <!--  fin de la div 1 de la section 2 -->
 
         <!--  div 2 de la section 2 -->
-        
+
         <div class="col-md-12 col-lg-4 mb-4">
             <img src="assets/img/oui2.jpg" alt="img" class="mb-4 me-2 img-fluid">
             <h3> <span>OUI </span>à la simplicité</h3>
@@ -70,7 +70,8 @@ require 'inc/header.inc.php';
 
                 Et parce que nous souhaitons que votre expérience à nos côtés soit la meilleure possible, LightOnline propose une navigation et un processus d’achat simple et rapide. Votre satisfaction est notre plus belle lumière !
 
-                C’est une évidence pour vous, une ligne de conduite chez nous.</p>
+                C’est une évidence pour vous, une ligne de conduite chez nous.
+            </p>
 
         </div>
         <!-- fin  div 2 de la section 2-->
@@ -78,7 +79,7 @@ require 'inc/header.inc.php';
 
         <!--  div 3 de la section 2  -->
 
-        <div class="col-md-12 col-lg-4 "> 
+        <div class="col-md-12 col-lg-4 ">
 
             <img src="assets/img/oui3.jpg" class="mb-4 img-fluid">
             <h3> <span>OUI</span> aux conseils</h3>
@@ -97,7 +98,7 @@ require 'inc/header.inc.php';
     <div class="row">
         <div class="col-md-12  col-lg-6 my-auto mx-auto">
             <h3>La sélection de l’équipe</h3>
-            <p class="" >Être leader de l’éclairage design et premium n’est pas que notre unique « luminaire », nous avons également à cœur de promouvoir le digital humain ! Chez Luminaire, la lumière est une seconde nature, c’est une passion qui anime tous nos collaborateurs, des acheteurs aux commerciaux, en passant par le team marketing. Nous avons voulu donner la parole à ceux qui font vibrer luminaire au quotidien : voici la sélection de notre équipe d’illuminés !</p>
+            <p class="">Être leader de l’éclairage design et premium n’est pas que notre unique « luminaire », nous avons également à cœur de promouvoir le digital humain ! Chez Luminaire, la lumière est une seconde nature, c’est une passion qui anime tous nos collaborateurs, des acheteurs aux commerciaux, en passant par le team marketing. Nous avons voulu donner la parole à ceux qui font vibrer luminaire au quotidien : voici la sélection de notre équipe d’illuminés !</p>
 
         </div>
         <div class="col-md-12  col-lg-6">

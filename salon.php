@@ -5,7 +5,7 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - salon';
-$h1='salon';
+$h1 = 'salon';
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
@@ -48,7 +48,8 @@ require 'inc/header.inc.php';
                         <p class="text-success"> En stock <?php echo $card['stock'] ?></p>
                         <p class="prix"><?php
 
-                            echo $card['prix'] . " " . "EUR";  ?></p>
+                                        echo $card['prix'] . " " . "EUR";  ?>
+                        </p>
                     </div>
                 </div>
 

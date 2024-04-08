@@ -372,12 +372,8 @@ h2 {
 
 /* style footer */
 
-
-#containerfooter {
+footer{
   background-color: #a6a6a6;
-  width: 100%;
-
-
 }
 
 footer i {
@@ -401,11 +397,7 @@ footer p {
 
 }
 
-.custom-footer{
-  margin-left: 0;
-  margin-right: 0;
 
-}
 
 
 /*  page apropos */

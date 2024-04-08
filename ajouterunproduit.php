@@ -2,11 +2,11 @@
 /* 1- Appel du fichier init */
 require 'inc/init.inc.php';
 $h1="ajoutproduit";
-// traitement formulaire ajouter un produit 
+// 2  traitement formulaire ajouter un produit 
 if(!estAdmin()){
     header('location:produits.php');
     exit();
-}// si la personne qui essaye d'aller sur la page n'est pas admin on la renvoie vers la page produit.php
+}//  si la personne qui essaye d'aller sur la page n'est pas admin on la renvoie vers la page produit.php
 
 
 if (!empty($_POST)) {
@@ -16,7 +16,7 @@ if (!empty($_POST)) {
     $_POST['description'] = htmlspecialchars($_POST['description']);
     $_POST['prix'] = htmlspecialchars($_POST['prix']);
     $_POST['stock'] = htmlspecialchars($_POST['stock']);
-    // b. la requête
+    // b. la requête d'insertion 
     $ajout = $pdoLuminaire->prepare("INSERT INTO produits (image, titre, description, prix, stock, categorie) VALUES (:image, :titre, :description, :prix, :stock, :categorie)");
 
     $ajout->execute([
@@ -37,7 +37,7 @@ if (!empty($_POST)) {
         $contenu .= "<div class=\"alert alert-danger\">Le produit  n'a pas pu être ajouté !</div>";
     }
 }
-/* 2- Affectation des variables et appel du header */
+/* 3- Affectation des variables et appel du header */
 $title = "luminaire- Ajout d'un produit";
 $h1="ajout produit";
 $paragraphe = "";

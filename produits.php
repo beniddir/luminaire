@@ -73,5 +73,5 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression' && isset($_GET['i
 
 
 </main>
-
+<!--  inclure le footer -->
 <?php require 'inc/footer.inc.php'; ?>

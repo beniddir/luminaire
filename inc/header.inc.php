@@ -33,8 +33,6 @@
             <!-- Formulaire de recherche -->
             <div class="col-sm-6 col-md-6 col-lg-4 mt-3">
                 <form class="d-flex h1 form1" role="search" action="recherche.php" method="GET">
-                    <!-- $_SERVER: C'est une superglobale en PHP qui contient plusieurs informations sur le serveur et l'environnement d'exécution.
-['PHP_SELF']: C'est une clé spécifique de la variable $_SERVER qui renvoie le nom du fichier du script PHP en cours d'exécution, y compris le chemin relatif par rapport au répertoire racine du site web. -->
                     <input class="form-control text-center border rounded-pill" type="search" placeholder="Tapez votre recherche ici" aria-label="Search" name="search1">
                     <button class="btn" type="submit" name="submit"><i class="bi bi-search"></i></button>
                 </form>
@@ -87,48 +85,49 @@
                     <!-- data-bs-toggle permettre à l'utilisateur d'activer ou désactiver les menu déroulant  par un clic. -->
 
                     <ul class="dropdown-menu">
-                 
+
                         <li><a href="chambreadulte.php" class="dropdown-item">Chambre Adulte</a></li>
                         <li><a href="chambreenfant.php" class="dropdown-item">Chambre Enfant</a> </li>
-
+                    </ul>
                 </li>
 
+
+                </li>
+                <li> <a href="salon.php" class="nav-link"> éclairage salon</a>
+                </li>
+                <li> <a href="cuisine.php" class="nav-link"> éclairage Cuisine</a>
+                </li>
+                <li> <a href="salledebain.php" class="nav-link">éclairage Salle de bain </a>
+                </li>
+                <li> <a href="exterieur.php" class="nav-link">éclairage Extérieur </a>
+                </li>
+                <?php
+                if (estConnecte()) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profil.php?id_utilisateur=<?php echo $_SESSION['utilisateurs']['id_utilisateur'] ?>">Profil</a>
+                    </li>
+                <?php }
+                if (estConnecte() && estAdmin()) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ajouterunproduit.php">Ajouter un produit</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.php"> Les Commandes </a>
+
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gestionstock.php"> Le Stock </a>
+
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="commentaire.php">Les Commentaires</a>
+
+                    </li>
+                <?php } ?>
             </ul>
-            </li>
-            <li> <a href="salon.php" class="nav-link"> éclairage salon</a>
-            </li>
-            <li> <a href="cuisine.php" class="nav-link"> éclairage Cuisine</a>
-            </li>
-            <li> <a href="salledebain.php" class="nav-link">éclairage Salle de bain </a>
-            </li>
-            <li> <a href="exterieur.php" class="nav-link">éclairage Extérieur </a>
-            </li>
-            <?php
-            if (estConnecte()) { ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="profil.php?id_utilisateur=<?php echo $_SESSION['utilisateurs']['id_utilisateur'] ?>">Profil</a>
-                </li>
-            <?php }
-            if (estConnecte() && estAdmin()) { ?>
-                <li class="nav-item">
-                    <a class="nav-link" href="ajouterunproduit.php">Ajouter un produit</a>
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="admin.php"> Les Commandes </a>
-
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gestionstock.php"> Le Stock </a>
-
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="commentaire.php">Les Commentaires</a>
-
-                </li <?php } ?> </ul>
-
         </nav>
         <!-- fin  navbar desktop -->
 
@@ -136,8 +135,8 @@
         <div class="navbar-mobile d-block d-md-non d-lg-none">
             <i class="bi bi-list" id="bouton">
             </i>
-             <p id="pmenu">Menu</p> 
-            <div class="modale" >
+            <p id="pmenu">Menu</p>
+            <div class="modale">
                 <div class="navbar-mobile-listes">
                     <ul class="nav ms-3">
                         <li class="nav-item dropdown">

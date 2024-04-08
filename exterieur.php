@@ -16,12 +16,13 @@ require 'inc/header.inc.php';
     <h2>Luminaire-Extérieur</h2>
     <p> </p>
     <?php
-    /* 1- Faire la requete */
+    /* 4- Faire la requete */
     $requete = $pdoLuminaire->query("SELECT * FROM produits  WHERE categorie ='exterieur' ");
     // Grâce aux valeur précisées après le LIMIT, je donne d'abord l'information de l'index par lequel je veux commencer (0 est le premier index du tableau) et combien de résultat je veux (16) 
     ?>
      <div class="row my-5">
         <?php
+        // recuperer les resultats 
         while ($card = $requete->fetch(PDO::FETCH_ASSOC)) {
         ?>
             <div class="col-12 col-md-6 col-lg-3 ">
@@ -60,5 +61,5 @@ require 'inc/header.inc.php';
 
 
 
-<!-- 4 inclure le footer  -->
+<!-- 5 inclure le footer  -->
 <?php require 'inc/footer.inc.php'; ?>

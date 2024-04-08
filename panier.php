@@ -86,8 +86,8 @@ require 'inc/header.inc.php';
     <?php } ?>
 
 <!--  tableau  du panier  -->
-    <table class="table table-dark table-striped table-bordered border-light">
-        <thead class="bg-info">
+    <table class="table table-primary table-striped table-bordered border-light table-sm">
+        <thead class="bg-info ">
             <tr>
                 <th>Image</th>
                 <th>Titre</th>

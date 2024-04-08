@@ -6,8 +6,8 @@
 
 </html>
 
-<footer class=" container-fluid mt-5 custom-footer " id="footer">
-    <div id="containerfooter">
+<footer class=" container-fluid mt-5  " >
+
         <!-- rangée1 footer -->
         <div class="row">
             <!--  div carte paiement -->
@@ -53,24 +53,24 @@
         </div>
 
         <!--  rangée 2 coordonnées -->
-        <div class="row">
+        <div class="row ">
             <!--  téléphone -->
-            <div class="col-sm-12 col-md-12 col-lg-4 d-flex  align-items-center ">
+            <div class="col-sm-12 col-md-12 col-lg-4 d-flex  align-items-center text-center ">
                 <i class="bi bi-telephone-forward-fill"></i>
                 <p> 07 81 00 05 54</p>
 
             </div>
             <!--  fin téléphone -->
             <!-- email -->
-            <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center ">
+            <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center text-center ">
                 <i class="bi bi-envelope-at-fill"></i>
                 <p> Luminaire@gmail.com</p>
                 
 
             </div>
             <!--  fin email -->
-            <!--  adress  -->
-            <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center ">
+            <!--  adresse  -->
+            <div class="col-sm-12 col-md-12 col-lg-4 d-flex align-items-center">
                 <a href="https://www.google.fr/maps/place/8+Bd+Louis+Loucheur,+92150+Suresnes/@48.8599378,2.2111395,16z/data=!3m1!4b1!4m6!3m5!1s0x47e664cb22a29415:0xb5785da3aae22abe!8m2!3d48.8599378!4d2.2137144!16s%2Fg%2F11c5mv02j8?entry=ttu"><i class="bi bi-geo-alt-fill"></i> </a>
                 <p> 8 Louis Loucheur Suresnes 92073 </p>
 
@@ -80,8 +80,8 @@
         </div>
         <!--  fin rangée  coordonnées -->
         <hr>
-        <p class="text-center">&copy; Radhia BENIDDIR, 2024</p>
+        <p class="text-center">&copy; Radhia BENIDDIR .2024</p>
 
-    </div>
-    <!-- footer -->
+
+    <!-- fin footer -->
 </footer>

@@ -22,7 +22,7 @@ require 'inc/header.inc.php';
     echo $contenu;
     ?>
     <div class="col-12">
-    <table class="table table-primary table-striped table-bordered border-dark">
+    <table class="table table-primary table-striped table-bordered border-dark table-sm">
         <thead>
             <tr>
                 <th>Id</th>

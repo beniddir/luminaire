@@ -89,4 +89,7 @@ if (isset($_GET['search1'])) {
 </div>
 
 
+
+
+<!-- inclure le footer -->
 <?php require 'inc/footer.inc.php'; ?>

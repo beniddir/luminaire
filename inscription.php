@@ -169,5 +169,6 @@ if (!empty($_POST)) {
     </div>
 </main>
 <?php
+/* 4 inclure le header */
 require "inc/footer.inc.php";
 ?>

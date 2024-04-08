@@ -5,7 +5,7 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - Mentions Légales';
-$h1="";
+$h1 = "";
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
@@ -239,9 +239,9 @@ require 'inc/header.inc.php';
                 <p> Si les marchandises doivent être livrées à plusieurs reprises ou d'une autre manière que celle indiquée dans la commande pour des raisons imputables à l'acheteur, l'acheteur est tenu de payer les frais liés à la livraison répétée des marchandises, respectivement de payer les frais liés à un autre mode d'expédition.</p>
             </li>
             <li>
-                <p></p>
-            </li> A la réception des marchandises du transporteur, l'acheteur est tenu de vérifier l'intégrité de l'emballage des marchandises et, en cas de défaut, de le notifier immédiatement au transporteur (au plus tard dans les 2 jours ouvrables). Si l'emballage prouve l'entrée non autorisée dans l'envoi, l'acheteur n'est pas obligé de reprendre cet envoi du transporteur. L'acheteur est également tenu de vérifier s'il a reçu la quantité de marchandises demandée lorsqu'il prend les marchandises du transporteur. En cas de différences, il est nécessaire de nous contacter dès que possible (au plus tard dans les deux jours ouvrables), afin que nous puissions commencer à résoudre le cas et régler les divergences avec succès.
-
+                <p>A la réception des marchandises du transporteur, l'acheteur est tenu de vérifier l'intégrité de l'emballage des marchandises et, en cas de défaut, de le notifier immédiatement au transporteur (au plus tard dans les 2 jours ouvrables). Si l'emballage prouve l'entrée non autorisée dans l'envoi, l'acheteur n'est pas obligé de reprendre cet envoi du transporteur. L'acheteur est également tenu de vérifier s'il a reçu la quantité de marchandises demandée lorsqu'il prend les marchandises du transporteur. En cas de différences, il est nécessaire de nous contacter dès que possible (au plus tard dans les deux jours ouvrables), afin que nous puissions commencer à résoudre le cas et régler les divergences avec succès.
+                </p>
+            </li>
             <li>
                 <p>Après avoir envoyé la commande, le client reçoit un lien lui permettant de suivre l'envoi. Dans le cas où l'envoi semble avoir été livré selon le suivi, mais que le destinataire n'a pas reçu l'envoi, le destinataire est tenu de notifier l'envoi à l'expéditeur dès que possible, au plus tard 5 jours à compter de la date de livraison spécifiée dans le suivi du transporteur.
                     L'expéditeur est tenu de notifier l'envoi à l'expéditeur dès que possible, au plus tard 5 jours à compter de la date de livraison spécifiée dans le suivi du transporteur.
