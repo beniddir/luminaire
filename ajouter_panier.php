@@ -1,8 +1,9 @@
 <?php
 require 'inc/init.inc.php';
-$title = "votre panier";
+$title = "ajout_ panier";
 $h1 = " Ajout_ panier";
-$paragraphe = "livraison gratuite .Les colis sont expédiés sous 48h maximum, après réception de votre paiement.";
+$contenu="";
+
 require 'inc/header.inc.php';
 
 
@@ -20,12 +21,13 @@ if (isset($_SESSION['utilisateurs']['id_utilisateur'])) { // Vérifie si l'utili
         $produit = $pdoLuminaire->prepare("SELECT * FROM produits WHERE id_produit = :id_produit");
         $produit->execute([':id_produit' => $id_produit]);
 
-        if ($produit->rowCount() == 0) {
+        if ($produit->rowCount() == 0) {// il n'existe pas dans table produits 
             $contenu .= "<div class=\"alert alert-danger\">Ce produit n'existe pas !</div>";
         }
 
         if (isset($_SESSION['panier'][$id_produit])) {//vérifie  $id_produit existe dans  $_SESSION['panier'
             $_SESSION['panier'][$id_produit]++;//  produit est déjà présent dans le panier. incrémente simplement sa quantité.
+            $contenu .= "<div class=\"alert alert-danger\">Ce produit a été bien ajouté au panier voir votre panier  !</div>";
         } else {
             $_SESSION['panier'][$id_produit] = 1;// si sa quantité reste = 1
             $contenu .= "<div class=\"alert alert-danger\">Ce produit a été bien ajouté au panier voir votre panier  !</div>";
@@ -36,7 +38,7 @@ if (isset($_SESSION['utilisateurs']['id_utilisateur'])) { // Vérifie si l'utili
     $contenu .= "<div class=\"alert alert-danger\">Vous devez être connecté pour ajouter des produits au panier.</div>";
 }
 ?>
-<!-- ce site est sur github -->
+
 
 <main>
     <?php echo $contenu ?>

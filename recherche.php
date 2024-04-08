@@ -2,6 +2,7 @@
 require 'inc/init.inc.php';
 
 $title = 'Luminaire - recherche';
+$h1='recherche';
 require 'inc/header.inc.php';
 
 // Vérifier si une recherche a été effectuée

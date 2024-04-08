@@ -6,6 +6,8 @@ require 'inc/init.inc.php';
 /* 2- Déclaration des variables du header et appel du fichier */
 
 $title = 'Luminaire - Contact';
+$h1='contact';
+
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
@@ -14,9 +16,6 @@ if (isset($_POST['envoyer'])) {
     // Récupérer les données du formulaire
     $email = $_POST['email'];
     $message = $_POST['message'];
-
-    // Vérifier les données (par exemple, vérifier si l'email est valide)
-
     // Traitement des données (par exemple, envoi d'un email)
     $destinataire = "luminaire@email.com"; // Adresse email à laquelle vous souhaitez recevoir les messages
     $sujet = "Nouveau message de contact";

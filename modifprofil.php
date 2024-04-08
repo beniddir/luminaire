@@ -1,6 +1,7 @@
 <?php
 /* 1- récupération des fichiers init et functions */
 require 'inc/init.inc.php';
+$h1='modif profil';
 
 /* 2- récupération des infos de la personne connectée */
 if (isset($_GET['id_utilisateur']) && $_SESSION['utilisateurs']['id_utilisateur'] == $_GET['id_utilisateur']) {

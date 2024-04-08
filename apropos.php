@@ -5,6 +5,7 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - apropos';
+$h1='apropos';
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 

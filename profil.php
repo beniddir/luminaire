@@ -2,6 +2,7 @@
 
 /* 1- Appel de la page init qui contient la page functions */
 require 'inc/init.inc.php';
+$h1='profil';
 
 /* 2- Vérification de connexion et redirection si ce n'est pas le cas */
 if (!estConnecte()) {
@@ -42,7 +43,7 @@ require 'inc/header.inc.php';
 
 
     <div class="col-12 col-md-5 mx-auto  ">
-        <div class="card  alert alert-dark">
+        <div class="card1  alert alert-dark">
             <div class="card-body ">
                 <h2 class=" text-center bg-info text-light my-3 shadow"><?php echo "$userInfo[prenom] $userInfo[nom]" ?></h2>
                 <p class="profil">Mail : <?php echo "$userInfo[email]" ?></p>

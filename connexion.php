@@ -2,7 +2,7 @@
 
 /* 1- Require du fichier init : connexion à la BDD */
 require 'inc/init.inc.php';
-$h1='luminaire - contact';
+$h1='luminaire - connexion';
 
 
 /* 3- Traitement du formulaire de connexion */

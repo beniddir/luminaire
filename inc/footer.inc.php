@@ -6,12 +6,12 @@
 
 </html>
 
-<footer class=" container-fluid mt-5" id="footer">
+<footer class=" container-fluid mt-5 custom-footer " id="footer">
     <div id="containerfooter">
         <!-- rangée1 footer -->
         <div class="row">
             <!--  div carte paiement -->
-            <div class="col-sm-12 col-md-12 col-lg-4 my-auto  text-center">
+            <div class="col-sm-12 col-md-12 col-lg-4 my-auto text-center ">
                 <p> Mode de Paiement</p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item"> <img src="assets/img/cartepaiement.jpg" alt="image cartes paiement" class=" img-fluid " height="150" width="150"></li>
@@ -38,7 +38,7 @@
 
             <!-- début div suivez nous -->
 
-            <div class="col-sm-12 col-md-12 col-lg-4 my-5 text-center">
+            <div class="col-sm-12 col-md-12 col-lg-4 my-5 text-center ">
                 <p> Suivez-Nous</p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item"> <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>

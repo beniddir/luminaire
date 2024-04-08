@@ -5,8 +5,8 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - Les Produit';
-$h1 = 'luminaire- Les Produit';
-$paragraphe = 'Affichage des Produits ';
+$h1 = 'luminaire- Les Produits';
+
 require 'inc/header.inc.php';
 
 /* 3- Suppression d'un produit */

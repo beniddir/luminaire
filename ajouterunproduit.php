@@ -1,11 +1,12 @@
 <?php
 /* 1- Appel du fichier init */
 require 'inc/init.inc.php';
+$h1="ajoutproduit";
 // traitement formulaire ajouter un produit 
 if(!estAdmin()){
     header('location:produits.php');
     exit();
-}// si la personne qui essaye d'aller sur la page n'est pas admin on la renvoie vers la page articles.php
+}// si la personne qui essaye d'aller sur la page n'est pas admin on la renvoie vers la page produit.php
 
 
 if (!empty($_POST)) {
@@ -38,6 +39,7 @@ if (!empty($_POST)) {
 }
 /* 2- Affectation des variables et appel du header */
 $title = "luminaire- Ajout d'un produit";
+$h1="ajout produit";
 $paragraphe = "";
 $paragraphe = "Ajouter un Produit";
 require 'inc/header.inc.php';

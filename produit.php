@@ -2,9 +2,11 @@
 
 /* 1- Co BDD */
 require 'inc/init.inc.php';
+$h1='produit';
 
-/* 2- Réception des infos de l'article sélectionné par son id */
-if (isset($_GET['id_produit'])) {
+/* 2- Réception des infos de l'article sélectionné par son id les afficheé ligne 93 */
+
+if (isset($_GET['id_produit'])) {//id_produit est définie dans l'URL 
     $info = $pdoLuminaire->prepare("SELECT * FROM produits WHERE  id_produit = :id_produit");
     $info->execute([
         ':id_produit' => $_GET['id_produit'],
@@ -19,7 +21,7 @@ if (isset($_GET['id_produit'])) {
     exit();
 }
 
-/* 3- traitement de formulaire de mise ajour d'un produit */
+/* 3- traitement de formulaire de mise ajour d'un produit  ligne 128 */
 if (!empty($_POST['majA'])) {
     //a. protection injection SQL
     $_POST['image'] = htmlspecialchars($_POST['image']);
@@ -55,7 +57,7 @@ $title = $produit['titre'];
 /* inclure le header*/
 require 'inc/header.inc.php';
 
-/* 5- traitement formulaire ajout d'un commentaire  */
+/* 5- traitement formulaire ajout d'un commentaire   ligne 194*/
 
 if (!empty($_POST['com'])) {
     // a. Protection contre les injections SQL
@@ -73,7 +75,7 @@ if (!empty($_POST['com'])) {
     $contenu .= "<div class=\"alert alert-danger\">Merci pour votre commentaire sa publication sera valider par l'administrateur !</div>";
 }
 
-/* 6- Afficher les commentaires de produit sélectionné qui sont validés */
+/* 6- Afficher les commentaires  qui sont validés ligne 222 */
 
 $affichageCom = $pdoLuminaire->prepare("SELECT * FROM commentaires, utilisateurs WHERE commentaires.id_produit = :id_produit AND commentaires.id_utilisateur = utilisateurs.id_utilisateur AND commentaires.valide = 1");
 
@@ -89,7 +91,7 @@ $affichageCom->execute([
 
         <h2> <span>F</span>iche produit:</h2>
         <!-- 1 affiche du produit dans une carte -->
-        <div class="card ">
+        <div class="card mt-4 ">
 
             <h3 class=" card-header text-center"><?php echo "$produit[titre] " ?></h3>
 
@@ -118,13 +120,13 @@ $affichageCom->execute([
                 <!--  supprimer un produit if admin  code de suppression page produits.php-->
 
                 <?php if (estAdmin()) { ?>
-                    <a href="produit.php?action=suppression&id_produit=<?php echo $produit['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning btn-rounded">Supprimer</a> <?php } ?>
+                    <a href="produits.php?action=suppression&id_produit=<?php echo $produit['id_produit'] ?>" onclick="return(confirm('Êtes vous sûr de vouloir supprimer ce produit ?'))" class="btn btn-warning btn-rounded">Supprimer</a> <?php } ?>
             </div>
         </div><!-- fin card-body -->
 
         <!-- fin de l'affichage  -->
 
-        <!-- 2 formulaire de mise a jour  afficher  que pour admin  -->
+        <!-- 2 formulaire de mise a jour  afficher  que pour admin traitement ligne 23 en haut de la page    -->
 
         <?php if (estAdmin()) { ?>
             <div class="col-12 col-md-8  container-fluid  bg-info d-flex flex-column  align-items-center justify-content-center p-5">
@@ -190,7 +192,7 @@ $affichageCom->execute([
 
 
 
-    <!-- le formulaire pour ajouter un commentaire -->
+    <!-- le formulaire pour ajouter un commentaire  traitement en php ligne 59 -->
 
     <section class="row my-5">
 
@@ -201,7 +203,7 @@ $affichageCom->execute([
 
 
 
-            <form action="#" method="POST" class="border border-primary col-12 col-md-5 mx-auto p-3">
+            <form action="#" method="POST" class="border border-primary col-12 col-md-5 mx-auto p-3 ">
                 <p class="my-5">Vous écrivez ce commentaire en tant que <?php echo $_SESSION['utilisateurs']['prenom'] ?></p>
 
 
@@ -218,7 +220,7 @@ $affichageCom->execute([
         <?php } ?>
 
 
-        <!-- affichage de commentaire la requete commentaire 6 -->
+        <!-- affichage de commentaire la requete commentaire 6  ligne 77 -->
         <?php
         if ($affichageCom->rowCount() == 0) {
             echo "<div class=\"alert alert-secondary\">Il n'y a pas encore de commentaire sur ce produit</div>";

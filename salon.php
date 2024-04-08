@@ -4,13 +4,14 @@
 require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
-$title = 'Luminaire - Accueil';
+$title = 'Luminaire - salon';
+$h1='salon';
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
 ?>
 <main class="container">
-    <h2>Luminaire-Cuisine</h2>
+    <h2>Luminaire-salon</h2>
     <?php echo $contenu ?>
 
     <?php

@@ -4,18 +4,19 @@
 
 /*  style général */
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 /* style Nom du site LUMINAIRE  */
 #nomsite {
- font-family:'garmond';
+  font-family: 'garmond';
   /* 'Aclonica', sans-serif; */
- color: #ffde59; 
+  color: #ffde59;
   font-style: italic;
   text-decoration: none;
   font-size: 40px;
@@ -26,8 +27,8 @@
 /* style de navbar normal */
 .navbar {
   display: flex;
-  justify-content:center;
- 
+  justify-content: center;
+
 }
 
 .navbar a {
@@ -37,17 +38,19 @@
   text-transform: capitalize;
   font-size: 11px;
   font-weight: bold;
-  
+
 }
-.navbar a:hover   {
-  
+
+.navbar a:hover {
+
   color: #0cc0df;
-  
- 
+
+
 }
+
 /* style  formulaire de recherche  */
 .form-control {
-        font-size:10px; 
+  font-size: 10px;
 }
 
 /*  positionnement de la barre */
@@ -60,8 +63,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 55vh;/* "viewport height" (hauteur de la fenêtre d'affichage).  */
- 
+  height: 55vh;
+  /* "viewport height" (hauteur de la fenêtre d'affichage).  */
+
 }
 
 .navbar-mobile-listes a {
@@ -73,20 +77,22 @@
 
 }
 
-.navbar-mobile-listes a:hover   {
-  
+.navbar-mobile-listes a:hover {
+
   color: #0cc0df;
-  
- 
+
+
 }
+
 /* Style du menu burger */
- #bouton {
+#bouton {
   position: fixed;
   top: -25px;
   left: 15px;
   font-weight: bold;
   font-size: 30px;
 }
+
 /*  style de menu  */
 #pmenu {
   position: fixed;
@@ -94,18 +100,20 @@
   left: 70px;
   font-weight: bold;
 }
+
 /*  style de la div qui contient les lien de la nav bar mobile */
 .modale {
   position: fixed;
   left: 0px;
   top: -100vh;
   background-color: #f0f0f2;
-  width:50%;
+  width: 50%;
   z-index: 1999;
   transition: top 0.9s;
-  height: 300px ;
+  height: 300px;
 
 }
+
 /*  style  de modal en md et ms  ce qui permet de l'afficher  */
 .modale-change {
   top: 100px;
@@ -116,7 +124,7 @@
 header i {
   padding: 20px;
   font-size: 17px;
- 
+
 }
 
 /*  style logo du site  */
@@ -125,10 +133,11 @@ header img {
   width: 80px;
 
 }
+
 /*  style connexion, panier ,contact  */
-.pheader{
+.pheader {
   font-size: 8px;
-  
+
 }
 
 /*  fin style header  */
@@ -136,10 +145,10 @@ header img {
 
 /*  style main */
 
-span{
+span {
   background-color: #ffbd59;
   margin-top: 30px;
-  margin-bottom: 30px; 
+  margin-bottom: 30px;
 }
 
 /* style div video  */
@@ -162,11 +171,12 @@ span{
 }
 
 #video {
-  display: block ;
-  width:400px;
+  display: block;
+  width: 400px;
   margin: 0 auto;
   height: 25rem;
 }
+
 /*  bouton découvrir sur la video  */
 .decouvrir {
   color: #f0f0f2;
@@ -187,28 +197,32 @@ span{
 /*  fin style video */
 
 /* style h2 */
-h2{
+h2 {
   font-style: italic;
   font-size: 20px;
   font-family: 'garmond';
-  
+
 }
 
 
 /* style card */
 .card {
-  transition: transform 0.3s;/* transition": C'est la propriété CSS qui permet de définir une transition pour les changements d'état d'un élément. */
+  transition: transform 0.3s;
+  /* transition": C'est la propriété CSS qui permet de définir une transition pour les changements d'état d'un élément. */
 }
 
 .card:hover {
-  transform: scale(1.07); /* "transform": C'est la propriété CSS qui permet d'appliquer des transformations ( la rotation, le déplacement, etc.) à un élément.
+  transform: scale(1.07);
+  /* "transform": C'est la propriété CSS qui permet d'appliquer des transformations ( la rotation, le déplacement, etc.) à un élément.
   "0.3s": C'est la durée de la transition  */
   /*  scale(1.07) permet grandir l'element de 7% a sa taille d'origine */
 }
-.pprix{
+
+.pprix {
   font-weight: bold;
   color: #ffde59;
 }
+
 /* fin style card  */
 
 
@@ -236,18 +250,21 @@ h2{
   height: 50px;
   border: 3px solid #f1f1f1;
   border-radius: 50%;
-   /*animation:  propriété CSS pour faire animation sur un element boxMagic le nom d'animation 
-   1s : duré de l'animation ,Linear: animation progresse linear , infinte , alterne direction :*/ 
+  /*animation:  propriété CSS pour faire animation sur un element boxMagic le nom d'animation 
+   1s : duré de l'animation ,Linear: animation progresse linear , infinte , alterne direction :*/
   animation: 1s linear infinite alternate boxMagic,
-  4s linear infinite spinning;
+    4s linear infinite spinning;
   padding-top: 60px;
   /*  pour deformer le circcle il depasse 320 et box sizinz a revoir  */
 }
- /* @keyframes est une règle CSS qui permet de définir des étapes spécifiques d'une animation.  */
+
+/* @keyframes est une règle CSS qui permet de définir des étapes spécifiques d'une animation.  */
 @keyframes boxMagic {
   from {
-    box-shadow:/*  l'ombre composé de plusieurs couches  */
-      0 0 0 #feac5e, /* une  ombre avec décalage horizontale , verticale , flou */
+    box-shadow:
+      /*  l'ombre composé de plusieurs couches  */
+      0 0 0 #feac5e,
+      /* une  ombre avec décalage horizontale , verticale , flou */
       0 0 0 #c779d0,
       0 0 0 #4bc0c8,
       0 0 0 #42db75;
@@ -264,11 +281,13 @@ h2{
 
 @keyframes spinning {
   from {
-    transform: rotate(0deg);/*  pas de rotation */
+    transform: rotate(0deg);
+    /*  pas de rotation */
   }
 
   to {
-    transform: rotate(360deg); /* rotation de 360deg */
+    transform: rotate(360deg);
+    /* rotation de 360deg */
   }
 }
 
@@ -293,112 +312,134 @@ h2{
 /*  fin style boutique */
 
 
-#imgext{
+#imgext {
   width: 210px;
   height: 175px;
 }
 
-.salon{
+.salon {
   position: relative;
-}
-.liensalon{
-  position: absolute;
-  bottom: -2%;
-  
-
-}
-.cuisine{
-  position: relative;
-}
-.liencuisine{
-  position: absolute;
-  bottom: -2%;
-  
 }
 
-.chambre{
-  position: relative;
-}
-.lienchambre{
+.liensalon {
   position: absolute;
   bottom: -2%;
-  
+
+
 }
-.sallebain{
+
+.cuisine {
   position: relative;
 }
-.liensallebain{
+
+.liencuisine {
+  position: absolute;
+  bottom: -2%;
+
+}
+
+.chambre {
+  position: relative;
+}
+
+.lienchambre {
+  position: absolute;
+  bottom: -2%;
+
+}
+
+.sallebain {
+  position: relative;
+}
+
+.liensallebain {
   position: absolute;
   bottom: -3%;
 
 }
 
-.exterieur{
+.exterieur {
   position: relative;
 }
-.lienexterieur{
+
+.lienexterieur {
   position: absolute;
   bottom: -3%;
-  
+
 }
 
 /* fin style js boutique  */
 
 /* style footer */
 
+
 #containerfooter {
-  background-color: #cecece;
-  width:100%;
-  
+  background-color: #a6a6a6;
+  width: 100%;
+
+
 }
 
 footer i {
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
+
+
 }
 
 footer a {
- 
+
   text-decoration: none;
   font-size: 10px;
   font-weight: bold;
 }
- footer p{
+
+footer p {
   font-size: 10px;
   font-weight: bold;
- }
+
+}
+
+.custom-footer{
+  margin-left: 0;
+  margin-right: 0;
+
+}
+
 
 /*  page apropos */
-.pageapropos{
+.pageapropos {
   position: relative;
 }
-.textpageapropos{
+
+.textpageapropos {
   position: absolute;
-  left:10%;
-  top:10%;
+  left: 10%;
+  top: 10%;
   background-color: #f1f1f1;
 }
-h4{
-  font-size:15px;
+
+h4 {
+  font-size: 15px;
   font-style: italic;
   text-transform: uppercase;
 
 }
-h3{
-  font-size:15px;
- text-transform: uppercase;
+
+h3 {
+  font-size: 15px;
+  text-transform: uppercase;
 }
-p{
+
+p {
   font-size: 15px;
 
 }
 
 /*  page profil */
-.profil{
+.profil {
   font-weight: bold;
   font-style: italic;
   color: #fff;
 }
-
-

@@ -9,15 +9,15 @@ $h1 = "panier";
 $contenu="";
 
 
-// 3 traitement formulaire valider le panier ligne 171 en bas de la page 
+// 3 traitement formulaire valider le panier: le fromulaire  ligne 172 en bas de la page 
 if (isset($_POST['valider'])) {
     if (!empty($_SESSION['panier'])) {
 
         // 3 -1 insérer la commande dans la table des commandes
         $ajout = $pdoLuminaire->prepare("INSERT INTO commandes (total, quantite_total, id_utilisateur, date_commande) VALUES (:total, :quantite_total, :id_utilisateur, NOW())");
         $ajout->execute([
-            ':total' => $_POST['total'],
-            ':quantite_total' => array_sum($_SESSION['panier']),
+            ':total' => $_POST['total'],// c'est le total calculer a la ligne 162 
+            ':quantite_total' => array_sum($_SESSION['panier']),//quantitié total calculé a la ligne160
             ':id_utilisateur' => $_SESSION['utilisateurs']['id_utilisateur']
         ]);
 
@@ -49,6 +49,8 @@ if (isset($_POST['valider'])) {
         // Afficher un message d'avertissement si le panier est vide
         $contenu .= "<div class=\"alert alert-warning\">Votre panier est vide, vous ne pouvez pas passer de commande.</div>";
     }
+
+# The colon prevents curl from asking for a password.
 }
 
 
@@ -111,7 +113,8 @@ require 'inc/header.inc.php';
                 } else {
                     // e -  Requête SQL pour récupérer les informations des produits correspondant aux identifiants présents dans $ids
                     $produits = $pdoLuminaire->query("SELECT * FROM produits WHERE id_produit IN (" . implode(',', $ids) . ")");
-                    /* implode(',', $ids): Cette fonction implode() est utilisée pour fusionner les éléments d'un tableau $ids en une chaîne de caractères où chaque élément du tableau est séparé par une virgule (,). Ainsi, si $ids est un tableau contenant les identifiants des produits [1, 2, 3], implode(',', $ids) produira la chaîne "1,2,3". */
+                    /* implode(',', $ids): Cette fonction implode() est utilisée pour fusionner les éléments d'un tableau $ids en une chaîne de caractères les éléments sont séparé par une virgule (,). Ainsi, si $ids est un tableau  [1, 2, 3], implode(',', $ids) produira la chaîne "1,2,3". 
+                    construire une chaîne de valeurs séparées par des virgules à partir d'un tableau.*/
 
                     // f- Boucle foreach pour parcourir les produits récupérés
                     foreach ($produits as $produit) {

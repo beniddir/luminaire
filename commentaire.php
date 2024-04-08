@@ -6,7 +6,7 @@ require 'inc/init.inc.php';
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - commentaire';
 
-// 3* traitement du formulaire de validation des commentaire 
+// 3* traitement du formulaire de validation des commentaire ligne 54
 
 if (isset($_POST['com'])) { // cela signifie que le formulaire a été soumis
 
@@ -41,8 +41,8 @@ require 'inc/header.inc.php';
             echo "
         <div class=\"alert alert-secondary\">
     
-            <h3>produit : $affichage[id_produit]</h3>
-            <p>$affichage[titre]</p>
+            <h3 class=\" alert alert-warning\">produit : $affichage[id_produit]</h3>
+            <p> Titre : $affichage[titre]</p>
             <p> le commentaire: $affichage[commentaire]</p>
             <p> Publié par : $affichage[prenom]</p>
             <p> valide : $affichage[valide]</p>
@@ -51,11 +51,19 @@ require 'inc/header.inc.php';
         </div>"; ?>
 
 
-            <!--  formulaire  de validation de commentaire  -->
+            <!--  formulaire  de validation de commentaire 09 -->
             <form action="#" method="POST" class="border border-primary col-12 col-md-5 mx-auto p-3">
                 <div class="mb-3">
                     <label for="valide">Valide</label>
-                    <input type="number" name="valide" id="valide" value="<?php echo $affichage['valide']; ?>">
+
+                    <select name="valide" id="valide" class="form-select">
+                        <option value="1">valider</option>
+                        <option value="0" <?php if (isset($affichage['valide']) && $affichage['valide'] == '0') {
+                                                echo "selected";
+                                            } ?>>Non valider</option>
+                    </select>
+
+                    
                     <input type="hidden" name="id_commentaire" id="id_commentaire" value="<?php echo $affichage['id_commentaire']; ?>">
 
                 </div>
