@@ -27,8 +27,7 @@
 /* style de navbar normal */
 .navbar {
   display: flex;
-  justify-content: center;
-
+  justify-content:center;
 }
 
 .navbar a {
@@ -163,7 +162,7 @@ span {
 .titrevideo {
   color: #f0f0f2;
   position: absolute;
-  bottom: 50%;
+  bottom: 60%;
   left: 10%;
   font-family: 'garmond';
   font-style: italic;
@@ -181,12 +180,11 @@ span {
 .decouvrir {
   color: #f0f0f2;
   position: absolute;
-  bottom: 10%;
+  bottom: 15%;
   right: 10%;
   border: solid 1px white;
   background-color: #0cc0df;
   border-radius: 30px;
-  padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
   text-decoration: none;
@@ -200,7 +198,7 @@ span {
 h2 {
   font-style: italic;
   font-size: 20px;
-  font-family: 'garmond';
+  font-family:'garmond';
 
 }
 
@@ -208,7 +206,7 @@ h2 {
 /* style card */
 .card {
   transition: transform 0.3s;
-  /* transition": C'est la propriété CSS qui permet de définir une transition pour les changements d'état d'un élément. */
+  /* transition": C'est la propriété CSS qui permet de définir un changements d'état sur un élément. */
 }
 
 .card:hover {
@@ -255,7 +253,7 @@ h2 {
   animation: 1s linear infinite alternate boxMagic,
     4s linear infinite spinning;
   padding-top: 60px;
-  /*  pour deformer le circcle il depasse 320 et box sizinz a revoir  */
+  /*  pour deformer le circcle il depasse 50pxet box sizinz a revoir  */
 }
 
 /* @keyframes est une règle CSS qui permet de définir des étapes spécifiques d'une animation.  */
@@ -264,13 +262,13 @@ h2 {
     box-shadow:
       /*  l'ombre composé de plusieurs couches  */
       0 0 0 #feac5e,
-      /* une  ombre avec décalage horizontale , verticale , flou */
+     
       0 0 0 #c779d0,
       0 0 0 #4bc0c8,
       0 0 0 #42db75;
   }
 
-  to {
+  to { /* une  ombre avec décalage horizontale , verticale , flou =0*/
     box-shadow:
       0 -10px 0 #feac5e,
       -10px 0 0 #c779d0,
@@ -282,7 +280,7 @@ h2 {
 @keyframes spinning {
   from {
     transform: rotate(0deg);
-    /*  pas de rotation */
+   
   }
 
   to {
@@ -314,19 +312,24 @@ h2 {
 
 #imgext {
   width: 210px;
-  height: 175px;
+  height: 200px;
 }
+#imgsallebain{
+  width: 210px;
+  height: 200px;
 
+}
 .salon {
   position: relative;
 }
 
 .liensalon {
   position: absolute;
-  bottom: -2%;
+  bottom: 1%;
 
 
 }
+
 
 .cuisine {
   position: relative;
@@ -334,7 +337,7 @@ h2 {
 
 .liencuisine {
   position: absolute;
-  bottom: -2%;
+  bottom: 1%;
 
 }
 
@@ -344,7 +347,7 @@ h2 {
 
 .lienchambre {
   position: absolute;
-  bottom: -2%;
+  bottom: 1%;
 
 }
 
@@ -354,7 +357,7 @@ h2 {
 
 .liensallebain {
   position: absolute;
-  bottom: -3%;
+  bottom: 1%;
 
 }
 
@@ -364,7 +367,7 @@ h2 {
 
 .lienexterieur {
   position: absolute;
-  bottom: -3%;
+  bottom: 1%;
 
 }
 

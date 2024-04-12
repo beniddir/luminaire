@@ -29,7 +29,7 @@ if (!empty($_POST)) {
             if (password_verify($_POST['mdp'], $utilisateur['mdp'])) {
                 /* password_verify est une fonction prédéfinie de PHP. Elle permet de vérifier que deux chaînes de caractères se correspondent. Elle prend donc deux arguments : 1- la chaîne entrée par l'utilisateur dans le formulaire, 2- la chaîne de caractère entrée lors de l'inscription. Elle comparare les deux et renvoie le booléen TRUE ou FALSE */
 
-                $_SESSION['utilisateurs'] = $utilisateur; // J'assigne les informations de l'utilisateur qui se connecte (que j'ai récupéré ici grâce à ma requête $membre) à $_SESSION qui comme toutes les super globales va créer un tableau multidimentionnel qui contient les informations
+                $_SESSION['utilisateurs'] = $utilisateur; // J'assigne les informations de l'utilisateur qui se connecte (que j'ai récupéré ici grâce à ma requête $utilisateur)
                 header('location:profil.php');
                 exit();/* si on a récupéré les bonnes infos on redirige l'utilisateur vers la page profil.php */
             } else {

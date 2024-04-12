@@ -13,16 +13,14 @@
             <!--  div carte paiement -->
             <div class="col-sm-12 col-md-12 col-lg-4 my-auto text-center ">
                 <p> Mode de Paiement</p>
-                <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item"> <img src="assets/img/cartepaiement.jpg" alt="image cartes paiement" class=" img-fluid " height="150" width="150"></li>
-
-                </ul>
+             
+                  <img src="assets/img/cartepaiement.jpg" alt="image cartes paiement" class=" img-fluid " height="150" width="150">
 
             </div>
             <!-- fin de div carte paiement -->
 
             <!-- div des liens généraux -->
-            <div class="col-sm-12 col-md-12 col-lg-4 my-auto d-flex mx-auto  ">
+            <div class="col-sm-12 col-md-12 col-lg-4 my-auto mx-auto  ">
                 <ul>
 
                     <li><a href="contact.php"> Contactez-Nous </a></li>

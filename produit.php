@@ -89,7 +89,7 @@ $affichageCom->execute([
 
     <section class="row my-5">
 
-        <h2> <span>F</span>iche produit:</h2>
+        <h2 class="pb-5"> <span>F</span>iche produit:</h2>
         <!-- 1 affiche du produit dans une carte -->
         <div class="card mt-4 ">
 
@@ -102,9 +102,9 @@ $affichageCom->execute([
                 </p>
 
                 <h5 class="card-title"><?php echo $produit['categorie']; ?></h5>
-                <p class=""> <?php echo $produit['image'] ?></p>
-                <p class=""><?php echo $produit['description'] ?></p>
-                <p class=""> <?php echo $produit['prix'] ?> €</p>
+                <p> <?php echo $produit['image'] ?></p>
+                <p><?php echo $produit['description'] ?></p>
+                <p> <?php echo $produit['prix'] ?> €</p>
                 <p class="text-success"> Stock:<?php echo $produit['stock'] ?> </p>
                 <!--  alert pour admin il a moins de 10 piece en stock  -->
                 <?php

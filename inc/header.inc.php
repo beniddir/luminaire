@@ -113,7 +113,7 @@
 
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin.php"> Les Commandes </a>
+                        <a class="nav-link" href="commandes.php"> Les Commandes </a>
 
 
                     </li>
@@ -168,7 +168,7 @@
 
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="admin.php">Les commandes</a>
+                                <a class="nav-link" href="commandes.php">Les commandes</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="gestionstock.php">Le Stock </a>

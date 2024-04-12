@@ -5,29 +5,31 @@ require 'inc/init.inc.php';
 
 /* 2- Déclaration des variables du header et appel du fichier */
 $title = 'Luminaire - Accueil';
-$h1="accueil";
+$h1 = "accueil";
 /*  3 inclure le header  */
 require 'inc/header.inc.php';
 
 ?>
 <main class="container">
 
-    <!--  div vidéo -->
+    <!--  div vidéo  css ligne 153-->
     <div class="container-fluid divideo">
         <h2 class="titrevideo"> Des éclairages <br> exceptionnels <br>pour votre<br> quotidien</h2>
         <video class="object-fit-fill  controls" autoplay="autoplay" muted=" " loop="infinite" id="video">
             <source src="assets/img/v.mp4">
-            <!--  oject-fit-cover prend la largeur de son container  :
+            <!--  oject-fit-fill remplire son container  :
 
          -->
 
         </video>
+        <a href="produits.php" class=" decouvrir">Découvrir </a>
     </div>
 
-    <a href="produits.php" class=" decouvrir">Découvrir </a>
-    </div>
+
+
     <!-- fin div video -->
-    <!--   <-- class=" container d-flex align-items-center my-3"> -->
+
+   <!--  div a la une  -->
 
     <h2 class="mx-5 my-3"> <span>A</span> la Une</h2>
 
@@ -38,7 +40,7 @@ require 'inc/header.inc.php';
     <?php
     /* 1- Faire la requete */
     $requete = $pdoLuminaire->query("SELECT * FROM produits ORDER BY id_produit DESC LIMIT 0,12");
-    // Grâce aux valeur précisées après le LIMIT, je donne d'abord l'information de l'index par lequel je veux commencer (0 est le premier index du tableau) et combien de résultat je veux (16) 
+    // Grâce aux valeur précisées après le LIMIT, je donne d'abord l'information de l'index par lequel je veux commencer )-
     ?>
     <div class="row my-5">
         <?php
@@ -133,11 +135,12 @@ require 'inc/header.inc.php';
     <!--  div pub -->
 
     <div class="container">
-
+        <!--  div animation -->
         <div class="box container d_flex my-3">
             <div class="circle"></div>
             <p>New</p>
         </div>
+        <!--  fin div animation -->
 
         <h2 class="titres my-4 h-3"><span>B</span>ientôt le livre lumineux ! </h2>
 
